@@ -9,22 +9,22 @@ const teamMembers = [
 {
 name:"Krish Sisodiya",
 role:"Founder",
-img:"../../public/img/krish.png"
+img:"/img/krish.png"
 },
 {
 name:"Pawan Rajpoot",
 role:"Lead Designer",
-img:"../../public/img/pawan.png"
+img:"/img/pawan.png"
 },
 {
 name:"Kartik Prajapat",
 role:"Lead Developer",
-img:"../../public/img/kartik.jpeg"
+img:"/img/kartik.jpeg"
 },
 {
 name:"Brajesh Kamle",
 role:"Frontennd Engineer",
-img:"../../public/img/brajesh.jpeg"
+img:"/img/brajesh.jpeg"
 }
 ];
 

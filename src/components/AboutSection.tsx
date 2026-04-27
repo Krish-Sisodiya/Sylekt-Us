@@ -11,7 +11,7 @@ const aboutData = [
 id:1,
 name:"Krish Sisodiya",
 role:"Founder",
-image:"../../public/img/krish.png",
+image:"/img/krish.png",
 desc:"Our new website has transformed the way we connect with our clients."
 },
 
@@ -19,7 +19,7 @@ desc:"Our new website has transformed the way we connect with our clients."
 id:2,
 name:"Kartik Parajapt",
 role:"Devloper",
-image:"../../public/img/kartik.jpeg",
+image:"/img/kartik.jpeg",
 desc:"The software automation solution improved productivity dramatically."
 },
 
@@ -27,7 +27,7 @@ desc:"The software automation solution improved productivity dramatically."
 id:3,
 name:"Pawan Rajpoot",
 role:"Degainer",
-image:"../../public/img/pawan.png",
+image:"/img/pawan.png",
 desc:"They built our product exactly how we imagined."
 }
 ];
