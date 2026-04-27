@@ -13,7 +13,7 @@ const coders = [
     name: "Brajesh Kamle",
     role: "Lead Frontend Engineer",
     skills: ["TypeScript", "UI/UX", "Animation"],
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&q=90"
+    image: "../../public/img/brajesh.jpeg"
   },
   {
     name: "Kartik Prajapat",

@@ -22,9 +22,9 @@ role:"Lead Developer",
 img:"../../public/img/kartik.jpeg"
 },
 {
-name:"Aashutosh Soni",
-role:"Full Stack Engineer",
-img:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1200&q=90"
+name:"Brajesh Kamle",
+role:"Frontennd Engineer",
+img:"../../public/img/brajesh.jpeg"
 }
 ];
 
