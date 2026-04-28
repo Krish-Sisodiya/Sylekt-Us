@@ -6,120 +6,120 @@ ChevronRight,
 Quote
 } from "lucide-react";
 
-const aboutData = [
+const aboutData=[
 {
 id:1,
 name:"Krish Sisodiya",
 role:"Founder",
 image:"/img/krish.png",
-desc:"Our new website has transformed the way we connect with our clients."
+desc:"Our new website transformed the way we connect with clients and present our brand."
 },
 
 {
 id:2,
-name:"Kartik Parajapt",
-role:"Devloper",
+name:"Kartik Prajapat",
+role:"Developer",
 image:"/img/kartik.jpeg",
-desc:"The software automation solution improved productivity dramatically."
+desc:"The automation software improved productivity dramatically and streamlined operations."
 },
 
 {
 id:3,
 name:"Pawan Rajpoot",
-role:"Degainer",
+role:"Designer",
 image:"/img/pawan.png",
-desc:"They built our product exactly how we imagined."
+desc:"They built our product exactly as we imagined, with exceptional attention to detail."
 }
 ];
-
 
 export default function AboutSection(){
 
 const [index,setIndex]=useState(0);
 
 const nextSlide=()=>{
-setIndex(prev=>
+setIndex(prev=>(
 prev===aboutData.length-1 ? 0 : prev+1
-)
-}
+))
+};
 
 const prevSlide=()=>{
-setIndex(prev=>
+setIndex(prev=>(
 prev===0 ? aboutData.length-1 : prev-1
-)
-}
+))
+};
 
 const item=aboutData[index];
 
-const nextIndex =
-(index + 1) % aboutData.length;
-
-const prevIndex =
-(index - 1 + aboutData.length) % aboutData.length;
+const nextIndex=(index+1)%aboutData.length;
+const prevIndex=(index-1+aboutData.length)%aboutData.length;
 
 
 return(
 
 <section className="
 relative overflow-hidden
-py-28 md:py-36
-bg-[#030712]
+py-24 md:py-32
+bg-[#020617]
 text-white
 ">
 
-{/* background glow */}
-
+{/* Ambient Glow */}
 <div className="
-absolute top-20 left-0
-w-[420px] h-[420px]
+absolute top-0 left-[-120px]
+w-[430px] h-[430px]
+rounded-full
 bg-cyan-500/10
-rounded-full blur-[180px]
+blur-[170px]
 "/>
 
 <div className="
-absolute bottom-0 right-0
+absolute bottom-[-100px] right-[-60px]
 w-[500px] h-[500px]
+rounded-full
 bg-blue-500/10
-rounded-full blur-[180px]
+blur-[190px]
 "/>
 
 
 <div className="
-max-w-7xl mx-auto
-px-6 md:px-10
 relative z-10
+max-w-7xl mx-auto
+px-4 md:px-8
 ">
 
-{/* heading */}
-
-<div className="
+{/* Header */}
+<motion.div
+initial={{opacity:0,y:40}}
+whileInView={{opacity:1,y:0}}
+viewport={{once:true}}
+transition={{duration:.9}}
+className="
 text-center
 max-w-4xl mx-auto
-mb-24
-">
+mb-20 md:mb-24
+"
+>
 
-<p className="
+<span className="
 inline-flex
-px-6 py-3
+px-5 py-2.5
 rounded-full
-border border-cyan-400/20
 bg-white/5
+border border-cyan-400/20
 text-cyan-300
-text-sm md:text-base
-mb-8
+text-sm
+mb-7
 ">
 Client Testimonials
-</p>
-
+</span>
 
 <h2 className="
 text-4xl
 sm:text-5xl
-md:text-6xl
-lg:text-7xl
+md:text-7xl
 font-bold
-leading-[1.05]
-tracking-[-0.03em]
+leading-[1.04]
+tracking-[-0.04em]
 ">
 Hear From
 
@@ -136,81 +136,88 @@ Our Happy Clients
 
 </h2>
 
-
 <p className="
 mt-8
 text-slate-400
-text-lg md:text-xl
-leading-relaxed
+text-base md:text-xl
 max-w-2xl mx-auto
+leading-relaxed
 ">
-Trusted by startups, founders and growing businesses.
+Trusted by founders, startups
+and ambitious growing businesses.
 </p>
 
-</div>
+</motion.div>
 
 
 
 
 <div className="
 grid lg:grid-cols-2
-gap-16 lg:gap-24
+gap-14 lg:gap-24
 items-center
 ">
 
-
-{/* LEFT IMAGE STACK */}
-
+{/* LEFT VISUAL */}
 <div className="
 relative
-flex justify-center
-items-center
-min-h-[650px]
+flex justify-center items-center
+min-h-[420px]
+md:min-h-[520px]
 ">
 
-
-{/* back preview left */}
+{/* preview left */}
 <motion.img
-key={aboutData[prevIndex].id}
 src={aboutData[prevIndex].image}
+key={aboutData[prevIndex].id}
+initial={{opacity:0}}
+animate={{opacity:.25}}
 className="
 absolute
 left-0 md:left-8
-w-[260px]
-h-[360px]
-rounded-[30px]
+
+w-[120px] sm:w-[160px] md:w-[210px]
+h-[170px] sm:h-[220px] md:h-[300px]
+
 object-cover
-opacity-30
-rotate-[-10deg]
+rounded-[28px]
+
+rotate-[-12deg]
 "
 />
 
 
-{/* back preview right */}
+{/* preview right */}
 <motion.img
-key={aboutData[nextIndex].id}
 src={aboutData[nextIndex].image}
+key={aboutData[nextIndex].id}
+initial={{opacity:0}}
+animate={{opacity:.25}}
 className="
 absolute
 right-0 md:right-8
-w-[260px]
-h-[360px]
-rounded-[30px]
+
+w-[130px] sm:w-[180px] md:w-[260px]
+h-[180px] sm:h-[250px] md:h-[360px]
+
 object-cover
-opacity-30
-rotate-[10deg]
+rounded-[28px]
+
+rotate-[12deg]
 "
 />
+
 
 
 <AnimatePresence mode="wait">
 
 <motion.div
 key={item.id}
+
 initial={{
 opacity:0,
-scale:.82,
-rotate:-4
+scale:.8,
+rotate:-6
 }}
 
 animate={{
@@ -222,13 +229,13 @@ rotate:0
 exit={{
 opacity:0,
 scale:.85,
-rotate:4
+rotate:6
 }}
 
 transition={{
-duration:.8,
+duration:1,
 type:"spring",
-stiffness:90
+stiffness:75
 }}
 
 className="relative z-20"
@@ -236,8 +243,9 @@ className="relative z-20"
 
 <div className="
 absolute inset-0
-bg-cyan-400/10
-blur-3xl rounded-[40px]
+rounded-[40px]
+bg-cyan-500/10
+blur-3xl
 "/>
 
 <img
@@ -246,10 +254,16 @@ alt={item.name}
 className="
 relative
 w-full
-max-w-[560px]
-h-[620px]
+max-w-[280px]
+sm:max-w-[360px]
+md:max-w-[430px]
+
+h-[340px]
+sm:h-[450px]
+md:h-[500px]
+
 object-cover
-rounded-[38px]
+rounded-[34px]
 shadow-2xl
 "
 />
@@ -265,8 +279,7 @@ shadow-2xl
 
 
 {/* RIGHT CONTENT */}
-
-<div className="max-w-xl">
+<div className="max-w-lg">
 
 <AnimatePresence mode="wait">
 
@@ -275,7 +288,7 @@ key={item.id+"text"}
 
 initial={{
 opacity:0,
-x:70
+x:90
 }}
 
 animate={{
@@ -285,56 +298,68 @@ x:0
 
 exit={{
 opacity:0,
-x:-70
+x:-90
 }}
 
 transition={{
-duration:.7,
+duration:.9,
 type:"spring"
 }}
 >
 
 <div className="
-w-20 h-20
-rounded-3xl
+w-14 h-14 md:w-16 md:h-16
+rounded-2xl
+mb-6
 bg-gradient-to-r
 from-blue-500/20
 to-cyan-400/20
-
 flex items-center justify-center
-mb-8
 ">
-<Quote size={34}/>
+<Quote size={30}/>
 </div>
 
 
 <h3 className="
-text-4xl md:text-6xl
+text-3xl
+md:text-5xl
 font-bold
 leading-tight
-mb-4
+mb-3
 ">
 {item.name}
 </h3>
 
+
 <p className="
 text-cyan-300
-text-lg md:text-xl
+text-base md:text-lg
 font-medium
-mb-10
+mb-8
 ">
 {item.role}
 </p>
 
 
+<div className="
+rounded-[26px]
+bg-white/[0.03]
+border border-white/8
+backdrop-blur-xl
+p-5 md:p-6
+">
+
 <p className="
-text-xl md:text-3xl
+text-base
+md:text-2xl
 leading-relaxed
-text-slate-300
 font-light
+text-slate-300
 ">
 “{item.desc}”
 </p>
+
+</div>
 
 </motion.div>
 
@@ -342,18 +367,16 @@ font-light
 
 
 
-
-{/* controls */}
-
+{/* Controls */}
 <div className="
-flex items-center gap-5
-mt-14
+flex items-center gap-4
+mt-8 md:mt-10
 ">
 
 <button
 onClick={prevSlide}
 className="
-w-16 h-16
+w-14 h-14 md:w-16 md:h-16
 rounded-full
 bg-white/5
 border border-white/10
@@ -361,19 +384,18 @@ border border-white/10
 flex items-center justify-center
 
 hover:bg-cyan-500
-hover:scale-105
+hover:scale-110
 
 transition
 "
 >
-<ChevronLeft size={28}/>
+<ChevronLeft size={26}/>
 </button>
-
 
 <button
 onClick={nextSlide}
 className="
-w-16 h-16
+w-14 h-14 md:w-16 md:h-16
 rounded-full
 bg-white/5
 border border-white/10
@@ -381,21 +403,20 @@ border border-white/10
 flex items-center justify-center
 
 hover:bg-cyan-500
-hover:scale-105
+hover:scale-110
 
 transition
 "
 >
-<ChevronRight size={28}/>
+<ChevronRight size={26}/>
 </button>
 
 </div>
 
 
 
-{/* indicators */}
-
-<div className="flex gap-4 mt-10">
+{/* Indicators */}
+<div className="flex gap-4 mt-8">
 
 {aboutData.map((_,i)=>(
 
@@ -408,7 +429,7 @@ rounded-full h-3
 transition-all duration-500
 
 ${index===i
-? "w-14 bg-cyan-400"
+? "w-12 bg-cyan-400"
 : "w-3 bg-white/20"}
 `}
 />
@@ -419,7 +440,6 @@ ${index===i
 
 
 </div>
-
 
 </div>
 

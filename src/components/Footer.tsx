@@ -13,6 +13,25 @@ MapPin,
 ArrowUpRight
 } from "lucide-react";
 
+const socialLinks = [
+{
+icon: <FaLinkedinIn />,
+link: "https://www.linkedin.com/company/sylekt-us/"
+},
+{
+icon: <FaGithub />,
+link: "https://github.com/yourusername"
+},
+{
+icon: <FaInstagram />,
+link: "https://www.instagram.com/sylektus?igsh=MzFmY21hempyeWZq"
+},
+{
+icon: <FaXTwitter />,
+link: "https://x.com/yourusername"
+}
+];
+
 const services=[
 "Web Development",
 "App Development",
@@ -149,29 +168,28 @@ border-b border-white/10
 
 
 {/* Brand */}
+
 <div>
 
 <h3 className="text-3xl font-bold mb-5">
-Sylekt <span className="text-cyan-400">Us</span>
+Sylect <span className="text-cyan-400">Us</span>
 </h3>
 
 <p className="text-slate-400 leading-relaxed mb-8">
 Building futuristic software products and digital solutions.
 </p>
 
-
 <div className="flex gap-4">
 
-{[
-<FaLinkedinIn/>,
-<FaGithub/>,
-<FaInstagram/>,
-<FaXTwitter/>
-].map((icon,i)=>(
+{socialLinks.map((item,i)=>(
 
 <motion.a
 key={i}
-whileHover={{y:-6}}
+href={item.link}
+target="_blank"
+rel="noopener noreferrer"
+whileHover={{ y:-6, scale:1.08 }}
+whileTap={{ scale:0.95 }}
 className="
 w-12 h-12
 rounded-full
@@ -184,7 +202,7 @@ transition
 "
 >
 
-{icon}
+{item.icon}
 
 </motion.a>
 
@@ -251,7 +269,7 @@ Contact
 
 <div className="flex gap-3 items-center">
 <Mail size={18} className="text-cyan-400"/>
-hello@sylektus.com
+connect.sylektus@gmail.com
 </div>
 
 <div className="flex gap-3 items-center">
@@ -264,7 +282,7 @@ hello@sylektus.com
 Indore, India
 </div>
 
-</div>
+</div> 
 
 
 <div className="mt-8">

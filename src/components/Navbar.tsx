@@ -1,7 +1,8 @@
 import { useEffect, useState, type JSX } from "react";
-import { Menu,X,ChevronRight,Code2 } from "lucide-react";
+import { Menu,X,ChevronRight, } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import logo from "/img/sylektusicon.png";
 
 const links = [
 {name:"Home", path:"/"},
@@ -74,59 +75,47 @@ relative
 <Link to="/">
 
 <motion.div
-whileHover={{scale:1.05}}
+whileHover={{ scale:1.05 }}
 className="flex items-center gap-3 cursor-pointer"
 >
 
-<motion.div
-animate={{
-boxShadow:[
-'0 0 10px rgba(0,170,255,.4)',
-'0 0 30px rgba(0,255,170,.5)',
-'0 0 10px rgba(0,170,255,.4)'
-]
-}}
 
-transition={{
-repeat:Infinity,
-duration:4
-}}
 
-className="
-p-3 rounded-xl
-border border-cyan-400/30
-bg-[#08172d]
-"
->
+{/* Logo Image */}
+<img
+src={logo}
+alt="Sylect Us Logo"
+className="w-14 h-14 object-contain rounded-lg"
+/>
 
-<Code2 className="text-cyan-400"/>
 
-</motion.div>
 
 
 <div>
-
 <h1 className="text-2xl md:text-3xl font-bold">
 <span className="text-white">Sylect</span>{" "}
 
-<span className="
+<span
+className="
 bg-gradient-to-r
 from-blue-400
 to-green-400
 bg-clip-text
 text-transparent
-">
+"
+>
 Us
 </span>
-
 </h1>
 
-<p className="
+<p
+className="
 text-[11px]
 tracking-[3px]
 uppercase
 text-slate-400
-">
+"
+>
 We Code Your Success
 </p>
 
@@ -135,7 +124,6 @@ We Code Your Success
 </motion.div>
 
 </Link>
-
 
 
 

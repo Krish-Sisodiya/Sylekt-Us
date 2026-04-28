@@ -8,26 +8,37 @@ FaInstagram
 const teamMembers = [
 {
 name:"Krish Sisodiya",
-role:"Founder",
-img:"/img/krish.png"
+role:"Founder & Lead Developer",
+img:"/img/krish.png",
+linkedin:"https://linkedin.com/in/krish-sisodiya",
+github:"https://github.com/krishsisodiya",
+instagram:"https://www.instagram.com/masterkrish2.0/"
 },
 {
 name:"Pawan Rajpoot",
-role:"Lead Designer",
-img:"/img/pawan.png"
+role:"Full Stack Developer",
+img:"/img/pawan.png",
+linkedin:"https://www.linkedin.com/in/pawan-rajpoot-160394351/",
+github:"https://github.com/pr771434-lgtm",
+instagram:"https://www.instagram.com/pawan_rajpoot.316"
 },
 {
 name:"Kartik Prajapat",
-role:"Lead Developer",
-img:"/img/kartik.jpeg"
+role:"Backend Developer",
+img:"/img/kartik.jpeg",
+linkedin:"https://linkedin.com/in/kartik",
+github:"https://github.com/kartik",
+instagram:"https://instagram.com/kartik"
 },
 {
 name:"Brajesh Kamle",
-role:"Frontennd Engineer",
-img:"/img/brajesh.jpeg"
+role:"Co-Founder & UI/UX",
+img:"/img/brajesh.jpeg",
+linkedin:"https://linkedin.com/in/brajesh",
+github:"https://github.com/brajesh",
+instagram:"https://instagram.com/brajesh"
 }
 ];
-
 
 export default function TeamSection(){
 
@@ -35,71 +46,46 @@ return(
 
 <section className="
 relative overflow-hidden
-py-28 md:py-36
-bg-[#030712]
+py-24 md:py-32
+bg-[#020617]
 ">
 
 {/* Background Glow */}
-
 <div className="
-absolute top-20 left-0
-w-[420px] h-[420px]
-bg-cyan-500/10 rounded-full
-blur-[180px]
+absolute top-0 left-[-100px]
+w-[400px] h-[400px]
+bg-cyan-500/10
+rounded-full blur-[160px]
 "/>
 
 <div className="
-absolute bottom-0 right-0
+absolute bottom-[-120px] right-[-80px]
 w-[500px] h-[500px]
-bg-blue-500/10 rounded-full
-blur-[180px]
+bg-blue-500/10
+rounded-full blur-[180px]
 "/>
 
 
-
 <div className="
-max-w-7xl mx-auto
-px-6 md:px-10
 relative z-10
+max-w-7xl mx-auto
+px-4 md:px-8
 ">
 
 {/* Heading */}
-
 <motion.div
 initial={{opacity:0,y:50}}
 whileInView={{opacity:1,y:0}}
-transition={{duration:.8}}
 viewport={{once:true}}
-className="
-text-center
-max-w-4xl mx-auto
-mb-24
-"
+transition={{duration:.8}}
+className="text-center max-w-4xl mx-auto mb-20"
 >
 
-<p className="
-inline-flex
-px-6 py-3
-rounded-full
-border border-cyan-400/20
-bg-white/5
-text-cyan-300
-text-sm md:text-base
-font-medium
-mb-8
-">
-Meet Our Team
-</p>
-
-
 <h2 className="
-text-4xl
-sm:text-5xl
-md:text-6xl
-lg:text-7xl
+text-4xl md:text-7xl
 font-bold
-leading-[1.05]
-tracking-[-0.03em]
+leading-[1.03]
+tracking-[-0.04em]
 text-white
 ">
 Creative Minds Behind
@@ -117,235 +103,225 @@ Digital Innovation
 
 </h2>
 
-
-<p className="
-text-slate-400
-mt-8
-text-lg md:text-xl
-leading-relaxed
-max-w-2xl mx-auto
-">
-A passionate team crafting premium products,
-digital experiences and scalable solutions.
-</p>
-
 </motion.div>
 
 
 
 
-{/* Team Cards */}
-
+{/* Team Grid */}
 <div className="
 grid
+grid-cols-2
 md:grid-cols-2
 xl:grid-cols-4
-gap-8 lg:gap-10
+gap-3 sm:gap-5 md:gap-8
 ">
 
 {teamMembers.map((member,index)=>(
 
 <motion.div
 key={index}
-
-initial={{
-opacity:0,
-y:70
-}}
-
-whileInView={{
-opacity:1,
-y:0
-}}
-
-transition={{
-delay:index*.1,
-duration:.7
-}}
-
+initial={{opacity:0,y:70}}
+whileInView={{opacity:1,y:0}}
 viewport={{once:true}}
-
-whileHover={{
-y:-12
+transition={{
+duration:.8,
+delay:index*.1
 }}
-
+whileHover={{y:-10}}
 className="group relative"
 >
 
-{/* Outer Glow */}
-
+{/* Glow */}
 <div className="
-absolute -inset-1
-rounded-[34px]
-
+absolute -inset-2
+rounded-[30px]
 opacity-0
 group-hover:opacity-100
-
-bg-gradient-to-r
-from-cyan-500/30
-to-blue-500/30
-
-blur-2xl
 transition duration-700
+bg-gradient-to-r
+from-cyan-500/20
+to-blue-500/20
+blur-2xl
 "/>
-
 
 
 <div className="
 relative
+h-[260px]
+sm:h-[320px]
+md:h-[470px]
 overflow-hidden
-rounded-[34px]
-h-[580px]
-
+rounded-[22px] md:rounded-[30px]
+border border-white/10
 bg-[#08172d]
-border border-white/5
-
-backdrop-blur-xl
 ">
-
-{/* Image */}
 
 <img
 src={member.img}
 alt={member.name}
-
 className="
 w-full h-full
 object-cover
-
 grayscale
 group-hover:grayscale-0
-
-group-hover:scale-[1.12]
-
-transition duration-1000 ease-out
+group-hover:scale-110
+transition duration-[1200ms]
 "
 />
 
-
-
-{/* Overlays */}
-
+{/* subtle overlay */}
 <div className="
 absolute inset-0
 bg-gradient-to-t
-from-black/95
-via-black/30
+from-black/20
 to-transparent
 "/>
 
 
-<div className="
-absolute inset-0
-opacity-0
-group-hover:opacity-100
-transition duration-700
-
-bg-gradient-to-t
-from-cyan-500/10
-to-transparent
-"/>
-
-
-
-
-{/* Glass Info Panel */}
-
+{/* Info Panel */}
 <div className="
 absolute
-left-6 right-6 bottom-6
+left-2 right-2
+sm:left-3 sm:right-3
+md:left-4 md:right-4
 
-rounded-3xl
-bg-white/5
-backdrop-blur-xl
+bottom-2 sm:bottom-3 md:bottom-4
 
+rounded-xl md:rounded-2xl
+bg-black/30 md:bg-white/8
+backdrop-blur-lg
 border border-white/10
 
-px-6 py-6
+px-3 sm:px-4 md:px-5
+py-3 sm:py-4 md:py-5
 
-transition duration-500
-group-hover:-translate-y-3
+translate-y-0
+md:translate-y-40
+md:group-hover:translate-y-0
+
+opacity-100
+md:opacity-0
+md:group-hover:opacity-100
+
+transition duration-700
+z-50
 ">
 
 <h3 className="
-text-3xl md:text-[34px]
+text-[13px]
+sm:text-base
+md:text-2xl
 font-bold
-leading-tight
 text-white
-mb-2
+mb-1
+leading-tight
 ">
 {member.name}
 </h3>
 
-
 <p className="
-text-slate-300
-group-hover:text-cyan-300
-text-lg
-transition
-mb-6
+text-[10px]
+sm:text-xs
+md:text-base
+text-cyan-300
+mb-2 md:mb-4
+leading-tight
 ">
 {member.role}
 </p>
 
 
-
-{/* Social Icons */}
-
 <div className="
-flex gap-4
-opacity-0
-translate-y-5
-group-hover:opacity-100
-group-hover:translate-y-0
-transition duration-500
+flex gap-2 md:gap-3
+relative z-[999]
+pointer-events-auto
 ">
 
-<div className="
-w-10 h-10 rounded-full
+<a
+href={member.linkedin}
+target="_blank"
+rel="noopener noreferrer"
+onClick={(e)=>e.stopPropagation()}
+className="
+w-6 h-6
+sm:w-7 sm:h-7
+md:w-10 md:h-10
+
+rounded-full
 bg-white/10
+border border-white/10
 hover:bg-cyan-500/20
+
 flex items-center justify-center
 transition
-">
-<FaLinkedin size={18}/>
-</div>
+pointer-events-auto
+"
+>
+<FaLinkedin size={10}/>
+</a>
 
-<div className="
-w-10 h-10 rounded-full
+
+<a
+href={member.github}
+target="_blank"
+rel="noopener noreferrer"
+onClick={(e)=>e.stopPropagation()}
+className="
+w-6 h-6
+sm:w-7 sm:h-7
+md:w-10 md:h-10
+
+rounded-full
 bg-white/10
+border border-white/10
 hover:bg-cyan-500/20
+
 flex items-center justify-center
 transition
-">
-<FaGithub size={18}/>
-</div>
+pointer-events-auto
+"
+>
+<FaGithub size={10}/>
+</a>
 
-<div className="
-w-10 h-10 rounded-full
+
+<a
+href={member.instagram}
+target="_blank"
+rel="noopener noreferrer"
+onClick={(e)=>e.stopPropagation()}
+className="
+w-6 h-6
+sm:w-7 sm:h-7
+md:w-10 md:h-10
+
+rounded-full
 bg-white/10
+border border-white/10
 hover:bg-cyan-500/20
+
 flex items-center justify-center
 transition
-">
-<FaInstagram size={18}/>
-</div>
+pointer-events-auto
+"
+>
+<FaInstagram size={10}/>
+</a>
 
 </div>
+
 </div>
 
 
-
-{/* Animated Border */}
 
 <div className="
 absolute inset-0
-rounded-[34px]
-
+rounded-[22px] md:rounded-[30px]
 border border-white/10
-
 group-hover:border-cyan-400/50
 transition duration-500
+pointer-events-none
 "/>
 
 </div>
@@ -355,43 +331,6 @@ transition duration-500
 ))}
 
 </div>
-
-
-
-
-{/* Bottom CTA */}
-
-<motion.div
-initial={{opacity:0,y:30}}
-whileInView={{opacity:1,y:0}}
-viewport={{once:true}}
-className="
-text-center
-mt-24
-"
->
-
-<button className="
-px-10 py-5
-rounded-full
-
-font-semibold
-text-base md:text-lg
-
-bg-gradient-to-r
-from-blue-500
-to-cyan-400
-
-shadow-[0_0_40px_rgba(0,255,255,.2)]
-
-hover:scale-105
-transition
-">
-Meet Full Team
-</button>
-
-</motion.div>
-
 
 </div>
 
