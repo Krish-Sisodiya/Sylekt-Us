@@ -347,3 +347,9 @@ scale(1.12);
 color:#54ffd0;
 
 }
+
+/* Joining Form */
+
+.input{
+@apply rounded-2xl bg-white/5 border border-white/10 px-6 py-4 text-white outline-none;
+}
