@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
   Code2,
@@ -12,8 +11,6 @@ import {
   ArrowRight,
   Flag,
 } from "lucide-react";
-
-const B = "#1D4ED8";
 
 const storyPoints = [
   {
@@ -194,7 +191,7 @@ export default function AboutPage() {
             transition={{ duration: 0.7 }}
             className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto mt-20"
           >
-            {stats.map(([number, label], index) => (
+            {stats.map(([number, label]) => (
               <motion.div
                 key={label}
                 whileHover={{
