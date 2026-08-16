@@ -1,293 +1,581 @@
 import { motion } from "framer-motion";
-
 import {
-SiReact,
-SiTypescript,
-SiJavascript,
-SiSpring,
-SiMysql,
-SiMongodb,
-SiDocker,
-SiKubernetes,
-SiFlutter,
-SiPython,
-SiNodedotjs,
-SiTailwindcss,
-SiPostgresql
+  SiReact,
+  SiTypescript,
+  SiJavascript,
+  SiSpring,
+  SiMysql,
+  SiMongodb,
+  SiDocker,
+  SiKubernetes,
+  SiFlutter,
+  SiPython,
+  SiNodedotjs,
+  SiTailwindcss,
+  SiPostgresql,
+  SiGit,
+  SiRedis,
 } from "react-icons/si";
 
 import type { IconType } from "react-icons";
 import type { JSX } from "react";
 
-interface TechItem{
-name:string;
-icon:IconType;
+interface TechItem {
+  name: string;
+  icon: IconType;
+  color: string;
 }
 
-const technologies:TechItem[]=[
-{name:"React",icon:SiReact},
-{name:"TypeScript",icon:SiTypescript},
-{name:"JavaScript",icon:SiJavascript},
-{name:"Spring",icon:SiSpring},
-{name:"Node.js",icon:SiNodedotjs},
-{name:"Python",icon:SiPython},
-{name:"MySQL",icon:SiMysql},
-{name:"PostgreSQL",icon:SiPostgresql},
-{name:"MongoDB",icon:SiMongodb},
-{name:"Docker",icon:SiDocker},
-{name:"Kubernetes",icon:SiKubernetes},
-{name:"Flutter",icon:SiFlutter},
-{name:"Tailwind",icon:SiTailwindcss}
+const technologies: TechItem[] = [
+  {
+    name: "React",
+    icon: SiReact,
+    color: "#2563EB",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    color: "#2563EB",
+  },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    color: "#2563EB",
+  },
+  {
+    name: "Spring",
+    icon: SiSpring,
+    color: "#2563EB",
+  },
+  {
+    name: "Node.js",
+    icon: SiNodedotjs,
+    color: "#2563EB",
+  },
+  {
+    name: "Python",
+    icon: SiPython,
+    color: "#2563EB",
+  },
+  {
+    name: "MySQL",
+    icon: SiMysql,
+    color: "#2563EB",
+  },
+  {
+    name: "PostgreSQL",
+    icon: SiPostgresql,
+    color: "#2563EB",
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    color: "#2563EB",
+  },
+  {
+    name: "Docker",
+    icon: SiDocker,
+    color: "#2563EB",
+  },
+  {
+    name: "Kubernetes",
+    icon: SiKubernetes,
+    color: "#2563EB",
+  },
+  {
+    name: "Flutter",
+    icon: SiFlutter,
+    color: "#2563EB",
+  },
+  {
+    name: "Tailwind",
+    icon: SiTailwindcss,
+    color: "#2563EB",
+  },
+  {
+    name: "Git",
+    icon: SiGit,
+    color: "#2563EB",
+  },
+  {
+    name: "Redis",
+    icon: SiRedis,
+    color: "#2563EB",
+  },
 ];
 
-
-type RowProps={
-items:TechItem[];
-reverse?:boolean;
-};
-
-function TechRow({items,reverse=false}:RowProps):JSX.Element{
-
-return(
-
-<div className="overflow-hidden py-3">
-
-<div className={reverse ? "marquee-track reverse":"marquee-track"}>
-
-{[...items,...items].map((tech,index)=>{
-
-const Icon=tech.icon;
-
-return(
-<div
-key={index}
-className="
-tech-pill
-group
-"
->
-
-<Icon className="tech-icon"/>
-
-<span>
-{tech.name}
-</span>
-
-</div>
-)
-
-})}
-
-</div>
-
-</div>
-
-)
-
+interface TechRowProps {
+  items: TechItem[];
+  reverse?: boolean;
 }
 
+function TechRow({
+  items,
+  reverse = false,
+}: TechRowProps): JSX.Element {
+  const repeatedItems = [...items, ...items];
 
+  return (
+    <div className="relative overflow-hidden py-3">
+      {/* Side fade */}
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-white to-transparent md:w-28" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-white to-transparent md:w-28" />
 
-export default function TechStack():JSX.Element{
+      <motion.div
+        className={`tech-marquee ${
+          reverse ? "tech-marquee-reverse" : ""
+        }`}
+      >
+        {repeatedItems.map((tech, index) => {
+          const Icon = tech.icon;
 
-return(
+          return (
+            <motion.div
+              key={`${tech.name}-${index}`}
+              whileHover={{
+                y: -5,
+                scale: 1.03,
+              }}
+              transition={{
+                duration: 0.25,
+              }}
+              className="tech-card group"
+            >
+              {/* Blue animated top line */}
+              <motion.div
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "0%" }}
+                transition={{ duration: 0.35 }}
+                className="absolute left-0 right-0 top-0 h-[2px] bg-[#2563EB]"
+              />
 
-<section className="
-relative overflow-hidden
-py-24 md:py-32
-">
+              {/* Icon */}
+              <div className="tech-icon-box">
+                <Icon
+                  className="tech-icon"
+                  style={{ color: tech.color }}
+                />
+              </div>
 
-{/* background glow */}
-<div className="
-absolute top-0 left-[-100px]
-w-[350px] h-[350px]
-bg-blue-500/10
-rounded-full
-blur-[150px]
-"/>
+              {/* Name */}
+              <span className="tech-name">
+                {tech.name}
+              </span>
 
-<div className="
-absolute bottom-0 right-[-100px]
-w-[420px] h-[420px]
-bg-cyan-400/10
-rounded-full
-blur-[180px]
-"/>
-
-
-<div className="
-relative z-10
-max-w-7xl mx-auto
-px-4 md:px-8
-text-center
-mb-14 md:mb-20
-">
-
-<motion.div
-initial={{opacity:0,y:30}}
-whileInView={{opacity:1,y:0}}
-viewport={{once:true}}
-transition={{duration:.8}}
->
-
-<p className="
-inline-flex
-px-5 py-2.5
-rounded-full
-border border-cyan-400/20
-bg-white/5
-text-cyan-300
-text-sm
-mb-6
-">
-Top Technologies We Use
-</p>
-
-
-<h2 className="
-text-4xl
-sm:text-5xl
-md:text-7xl
-font-bold
-leading-[1.05]
-tracking-[-0.04em]
-">
-
-Powered By
-
-<span className="
-block mt-2
-bg-gradient-to-r
-from-blue-400
-to-cyan-400
-bg-clip-text
-text-transparent
-">
-Modern Tech Stack
-</span>
-
-</h2>
-
-
-<p className="
-mt-7
-text-slate-400
-text-base md:text-xl
-max-w-2xl mx-auto
-leading-relaxed
-">
-Built using modern technologies powering
-high-performance digital products.
-</p>
-
-</motion.div>
-
-</div>
-
-
-
-<TechRow items={technologies}/>
-
-<div className="mt-5 md:mt-8">
-<TechRow
-items={technologies}
-reverse
-/>
-</div>
-
-
-<style>{`
-
-.marquee-track{
-display:flex;
-width:max-content;
-gap:22px;
-animation:scrollLeft 32s linear infinite;
+              {/* Small dot */}
+              <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#BFDBFE] transition-all duration-300 group-hover:bg-[#2563EB] group-hover:shadow-[0_0_8px_rgba(37,99,235,0.5)]" />
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </div>
+  );
 }
 
-.marquee-track.reverse{
-animation:scrollRight 34s linear infinite;
-}
+export default function TechStack(): JSX.Element {
+  return (
+    <section
+      id="tech-stack"
+      className="relative overflow-hidden bg-white py-20 md:py-28"
+    >
+      {/* ============================= */}
+      {/* Background */}
+      {/* ============================= */}
 
-@keyframes scrollLeft{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
-}
+      <div className="pointer-events-none absolute inset-0">
+        {/* Soft blue glow */}
+        <motion.div
+          animate={{
+            x: [0, 40, 0],
+            y: [0, -25, 0],
+            opacity: [0.15, 0.25, 0.15],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute -right-40 top-10 h-80 w-80 rounded-full bg-[#DBEAFE] blur-3xl"
+        />
 
-@keyframes scrollRight{
-0%{transform:translateX(-50%)}
-100%{transform:translateX(0)}
-}
+        <motion.div
+          animate={{
+            x: [0, -35, 0],
+            y: [0, 25, 0],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute -left-40 bottom-10 h-80 w-80 rounded-full bg-[#EFF6FF] blur-3xl"
+        />
 
-.tech-pill{
-display:flex;
-align-items:center;
-gap:12px;
+        {/* Small grid */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: `
+              linear-gradient(#2563EB 1px, transparent 1px),
+              linear-gradient(90deg, #2563EB 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px",
+          }}
+        />
+      </div>
 
-padding:14px 22px;
-border-radius:18px;
+      {/* ============================= */}
+      {/* Animated Blue Lines */}
+      {/* ============================= */}
 
-background:rgba(255,255,255,.04);
-backdrop-filter:blur(16px);
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: "100%" }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute top-16 h-px w-1/3 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-40"
+        />
 
-border:1px solid rgba(255,255,255,.08);
+        <motion.div
+          initial={{ x: "100%" }}
+          animate={{ x: "-100%" }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute top-24 h-px w-1/4 bg-gradient-to-r from-transparent via-[#60A5FA] to-transparent opacity-30"
+        />
 
-min-width:max-content;
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: "100%" }}
+          transition={{
+            duration: 11,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute bottom-20 h-px w-1/4 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-25"
+        />
+      </div>
 
-transition:.4s ease;
-}
+      {/* ============================= */}
+      {/* Main Content */}
+      {/* ============================= */}
 
-.tech-pill:hover{
-transform:translateY(-6px) scale(1.03);
-border-color:rgba(34,211,238,.45);
-box-shadow:0 0 30px rgba(34,211,238,.08);
-}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
+        {/* Heading */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+          className="mx-auto mb-12 max-w-3xl text-center md:mb-16"
+        >
+          {/* Badge */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.95,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.4,
+            }}
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#BFDBFE] bg-[#EFF6FF] px-4 py-2 text-sm font-semibold text-[#1D4ED8]"
+          >
+            <motion.div
+              animate={{
+                rotate: [0, 8, -8, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <SiReact size={15} />
+            </motion.div>
 
-.tech-icon{
-font-size:28px;
-color:#67e8f9;
-transition:.4s ease;
-}
+            Top Technologies We Use
+          </motion.div>
 
-.tech-pill:hover .tech-icon{
-transform:rotate(12deg) scale(1.12);
-}
+          {/* Heading */}
+          <h2 className="text-4xl font-bold tracking-tight text-[#0F172A] sm:text-5xl md:text-6xl">
+            Powered By{" "}
+            <span className="block text-[#1D4ED8]">
+              Modern Tech Stack
+            </span>
+          </h2>
 
-.tech-pill span{
-font-weight:600;
-font-size:15px;
-color:white;
-white-space:nowrap;
-}
+          {/* Animated underline */}
+          <motion.div
+            initial={{
+              width: 0,
+            }}
+            whileInView={{
+              width: 90,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.2,
+            }}
+            className="mx-auto mt-5 h-1 rounded-full bg-[#2563EB]"
+          />
 
-@media(max-width:768px){
+          {/* Description */}
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 15,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.25,
+            }}
+            className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#64748B] md:text-lg"
+          >
+            Built using modern technologies powering high-performance
+            digital products.
+          </motion.p>
+        </motion.div>
 
-.marquee-track{
-gap:14px;
-animation-duration:20s;
-}
+        {/* ============================= */}
+        {/* Technology Rows */}
+        {/* ============================= */}
 
-.tech-pill{
-padding:10px 15px;
-border-radius:14px;
-gap:9px;
-}
+        <div className="space-y-4 md:space-y-5">
+          <TechRow items={technologies} />
 
-.tech-icon{
-font-size:20px;
-}
+          <TechRow
+            items={technologies}
+            reverse
+          />
+        </div>
 
-.tech-pill span{
-font-size:12px;
-}
+        {/* ============================= */}
+        {/* Bottom Text */}
+        {/* ============================= */}
 
-}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 15,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.3,
+          }}
+          className="mt-10 text-center"
+        >
+          <span className="text-sm font-medium text-[#94A3B8]">
+            Modern tools. Clean architecture. Reliable solutions.
+          </span>
+        </motion.div>
+      </div>
 
-`}</style>
+      {/* Bottom blue line */}
+      <motion.div
+        initial={{
+          x: "-100%",
+        }}
+        animate={{
+          x: "100%",
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="pointer-events-none absolute bottom-0 h-[2px] w-1/3 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-50"
+      />
 
+      {/* ============================= */}
+      {/* Component Styles */}
+      {/* ============================= */}
 
-</section>
+      <style>{`
+        .tech-marquee {
+          display: flex;
+          width: max-content;
+          gap: 14px;
+          animation: techScrollLeft 38s linear infinite;
+          will-change: transform;
+        }
 
-)
+        .tech-marquee-reverse {
+          animation: techScrollRight 42s linear infinite;
+        }
 
+        .tech-marquee:hover,
+        .tech-marquee-reverse:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes techScrollLeft {
+          from {
+            transform: translateX(0);
+          }
+
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes techScrollRight {
+          from {
+            transform: translateX(-50%);
+          }
+
+          to {
+            transform: translateX(0);
+          }
+        }
+
+        .tech-card {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          min-width: 185px;
+          padding: 14px 17px;
+          border: 1px solid #E2E8F0;
+          border-radius: 14px;
+          background: #FFFFFF;
+          box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+          overflow: hidden;
+          cursor: default;
+          transition:
+            border-color 0.3s ease,
+            box-shadow 0.3s ease,
+            transform 0.3s ease;
+        }
+
+        .tech-card:hover {
+          border-color: #93C5FD;
+          box-shadow: 0 10px 28px rgba(37, 99, 235, 0.12);
+        }
+
+        .tech-icon-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          flex-shrink: 0;
+          border-radius: 10px;
+          background: #EFF6FF;
+          transition:
+            background 0.3s ease,
+            transform 0.3s ease;
+        }
+
+        .tech-card:hover .tech-icon-box {
+          background: #DBEAFE;
+          transform: scale(1.06);
+        }
+
+        .tech-icon {
+          font-size: 22px;
+          transition:
+            transform 0.3s ease,
+            filter 0.3s ease;
+        }
+
+        .tech-card:hover .tech-icon {
+          transform: scale(1.12);
+          filter: drop-shadow(0 0 5px rgba(37, 99, 235, 0.3));
+        }
+
+        .tech-name {
+          color: #334155;
+          font-size: 14px;
+          font-weight: 700;
+          white-space: nowrap;
+          transition: color 0.3s ease;
+        }
+
+        .tech-card:hover .tech-name {
+          color: #1D4ED8;
+        }
+
+        @media (max-width: 768px) {
+          .tech-marquee {
+            gap: 10px;
+            animation-duration: 28s;
+          }
+
+          .tech-marquee-reverse {
+            animation-duration: 30s;
+          }
+
+          .tech-card {
+            min-width: 155px;
+            padding: 11px 13px;
+            border-radius: 12px;
+            gap: 9px;
+          }
+
+          .tech-icon-box {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+          }
+
+          .tech-icon {
+            font-size: 19px;
+          }
+
+          .tech-name {
+            font-size: 12px;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .tech-marquee,
+          .tech-marquee-reverse {
+            animation-play-state: paused;
+          }
+        }
+      `}</style>
+    </section>
+  );
 }

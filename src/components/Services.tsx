@@ -1,358 +1,231 @@
 import { motion } from "framer-motion";
 import {
-Code2,
-Smartphone,
-Globe,
-Database,
-Cloud,
-ShieldCheck,
-Palette,
-Cpu
+  Code2,
+  Smartphone,
+  Globe,
+  Database,
+  Cloud,
+  ShieldCheck,
+  Palette,
+  Cpu,
+  ArrowRight,
+  Sparkles,
 } from "lucide-react";
-
 import type { JSX } from "react";
 import { useNavigate } from "react-router-dom";
 
-interface ServiceItem{
-title:string;
-desc:string;
-icon:JSX.Element;
+interface ServiceItem {
+  title: string;
+  desc: string;
+  icon: JSX.Element;
 }
 
-const services:ServiceItem[]=[
-
-{
-title:"Web Development",
-desc:"Scalable modern business websites.",
-icon:<Code2 size={26}/>
-},
-
-{
-title:"App Development",
-desc:"Android and iOS apps for growth.",
-icon:<Smartphone size={26}/>
-},
-
-{
-title:"Domain & Hosting",
-desc:"Secure hosting and deployment.",
-icon:<Globe size={26}/>
-},
-
-{
-title:"Custom Software",
-desc:"Enterprise software systems.",
-icon:<Database size={26}/>
-},
-
-{
-title:"Cloud Solutions",
-desc:"Cloud and DevOps automation.",
-icon:<Cloud size={26}/>
-},
-
-{
-title:"Cyber Security",
-desc:"Protected secure deployments.",
-icon:<ShieldCheck size={26}/>
-},
-
-{
-title:"UI / UX Design",
-desc:"Premium futuristic interfaces.",
-icon:<Palette size={26}/>
-},
-
-{
-title:"AI Integrations",
-desc:"Automation and AI workflows.",
-icon:<Cpu size={26}/>
-}
-
+const services: ServiceItem[] = [
+  {
+    title: "Web Development",
+    desc: "Scalable modern business websites built with cutting-edge technologies.",
+    icon: <Code2 size={26} />,
+  },
+  {
+    title: "App Development",
+    desc: "Native Android and iOS apps designed for performance and growth.",
+    icon: <Smartphone size={26} />,
+  },
+  {
+    title: "Domain & Hosting",
+    desc: "Secure, fast hosting solutions with 99.9% uptime guarantee.",
+    icon: <Globe size={26} />,
+  },
+  {
+    title: "Custom Software",
+    desc: "Enterprise-grade software systems tailored to your business needs.",
+    icon: <Database size={26} />,
+  },
+  {
+    title: "Cloud Solutions",
+    desc: "Scalable cloud infrastructure and DevOps automation services.",
+    icon: <Cloud size={26} />,
+  },
+  {
+    title: "Cyber Security",
+    desc: "Advanced security solutions to protect your digital assets.",
+    icon: <ShieldCheck size={26} />,
+  },
+  {
+    title: "UI / UX Design",
+    desc: "Premium, user-centric interfaces that delight and convert.",
+    icon: <Palette size={26} />,
+  },
+  {
+    title: "AI Integrations",
+    desc: "Smart automation and AI-powered workflow solutions.",
+    icon: <Cpu size={26} />,
+  },
 ];
 
-export default function Services():JSX.Element{
-    
-    const navigate = useNavigate();
-
-return(
-
-<section
-id="services"
-className="
-relative overflow-hidden
-py-24 md:py-32
-"
->
-
-{/* Background Glow */}
-
-<div className="
-absolute top-10 left-0
-w-[350px] h-[350px]
-rounded-full
-bg-blue-500/10
-blur-[150px]
-"/>
-
-<div className="
-absolute bottom-0 right-0
-w-[420px] h-[420px]
-rounded-full
-bg-cyan-400/10
-blur-[170px]
-"/>
-
-
-<div className="
-relative z-10
-max-w-7xl mx-auto
-px-4 md:px-8
-">
-
-{/* Header */}
-
-<motion.div
-initial={{opacity:0,y:40}}
-whileInView={{opacity:1,y:0}}
-transition={{duration:.8}}
-viewport={{once:true}}
-className="text-center max-w-4xl mx-auto mb-16 md:mb-24"
->
-
-<p className="
-inline-flex
-px-5 py-2.5
-rounded-full
-border border-cyan-400/20
-bg-white/5
-text-cyan-300
-text-sm
-font-medium
-mb-7
-">
-Our Services
-</p>
-
-<h2 className="
-font-bold
-text-4xl
-sm:text-5xl
-md:text-7xl
-leading-[1.05]
-tracking-[-0.04em]
-">
-Digital Solutions For
-
-<span className="
-block mt-2
-bg-gradient-to-r
-from-blue-400
-to-cyan-400
-bg-clip-text
-text-transparent
-">
-Future Businesses
-</span>
-
-</h2>
-
-<p className="
-mt-8
-text-slate-400
-max-w-2xl mx-auto
-text-base md:text-xl
-leading-relaxed
-">
-Everything needed to build,
-launch and scale digitally.
-</p>
-
-</motion.div>
-
-
-
-
-{/* Services Grid */}
-
-<div className="
-grid
-grid-cols-2
-lg:grid-cols-4
-gap-4 md:gap-7
-">
-
-{services.map((service,index)=>(
-
-<motion.div
-key={index}
-initial={{opacity:0,y:50}}
-whileInView={{opacity:1,y:0}}
-transition={{
-delay:index*.08,
-duration:.6
-}}
-viewport={{once:true}}
-
-whileHover={{
-y:-10,
-scale:1.03
-}}
-
-className={`
-group relative
-rounded-[26px]
-p-[1px]
-
-bg-gradient-to-br
-from-blue-500/30
-via-cyan-400/15
-to-green-400/25
-
-${index>5 ? "hidden lg:block" : ""}
-`}
->
-
-<div className="
-relative
-overflow-hidden
-rounded-[26px]
-
-bg-[#08172d]
-border border-white/5
-
-p-5 md:p-7
-
-min-h-[250px]
-md:min-h-[310px]
-
-flex flex-col
-">
-
-{/* Hover Glow */}
-<div className="
-absolute inset-0
-opacity-0
-group-hover:opacity-100
-transition duration-500
-bg-gradient-to-br
-from-blue-500/5
-to-cyan-400/5
-"/>
-
-<div className="relative z-10">
-
-<div className="
-w-[58px] h-[58px]
-md:w-[68px] md:h-[68px]
-
-rounded-2xl
-mb-6
-
-flex items-center justify-center
-
-bg-gradient-to-r
-from-blue-500/20
-to-cyan-400/20
-
-group-hover:scale-110
-group-hover:rotate-6
-
-transition duration-500
-">
-
-{service.icon}
-
-</div>
-
-
-<h3 className="
-text-lg
-md:text-2xl
-font-semibold
-leading-tight
-mb-4
-group-hover:text-cyan-300
-transition
-">
-{service.title}
-</h3>
-
-
-<p className="
-text-slate-400
-text-sm md:text-base
-leading-6 md:leading-7
-">
-{service.desc}
-</p>
-
-</div>
-
-
-{/* bottom accent line */}
-<div className="
-absolute bottom-0 left-0
-h-[3px] w-0
-group-hover:w-full
-bg-gradient-to-r
-from-blue-500
-to-cyan-400
-transition-all duration-500
-"/>
-
-</div>
-
-</motion.div>
-
-))}
-
-</div>
-
-
-
-
-{/* CTA */}
-
-<motion.div
-initial={{opacity:0,y:30}}
-whileInView={{opacity:1,y:0}}
-viewport={{once:true}}
-className="text-center mt-16 md:mt-24"
->
-
-<button
-onClick={()=>navigate("/services")}
-className="
-px-9 md:px-12
-py-4 md:py-5
-
-rounded-full
-font-semibold
-text-base md:text-lg
-text-white
-
-bg-gradient-to-r
-from-blue-500
-to-cyan-400
-
-shadow-[0_0_40px_rgba(0,255,255,.2)]
-
-hover:scale-105
-hover:shadow-[0_0_60px_rgba(0,255,255,.3)]
-
-transition
-"
->
-Explore Solutions →
-</button>
-
-</motion.div>
-
-</div>
-
-</section>
-
-)
-
+export default function Services(): JSX.Element {
+  const navigate = useNavigate();
+
+  return (
+    <section
+      id="services"
+      className="relative overflow-hidden bg-white py-20 md:py-28"
+    >
+      {/* Animated blue lines */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <motion.div
+          initial={{ x: "-110%" }}
+          animate={{ x: "110%" }}
+          transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
+          className="absolute top-16 h-px w-1/3 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-40"
+        />
+
+        <motion.div
+          initial={{ x: "110%" }}
+          animate={{ x: "-110%" }}
+          transition={{ duration: 9, repeat: Infinity, ease: "linear" }}
+          className="absolute top-32 h-px w-1/4 bg-gradient-to-r from-transparent via-[#60A5FA] to-transparent opacity-30"
+        />
+
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: "100%" }}
+          transition={{ duration: 11, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-24 h-px w-1/4 bg-gradient-to-r from-transparent via-[#1D4ED8] to-transparent opacity-25"
+        />
+
+        <motion.div
+          animate={{ y: [0, 18, 0], opacity: [0.18, 0.32, 0.18] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -right-32 top-20 h-72 w-72 rounded-full bg-[#DBEAFE] blur-3xl"
+        />
+
+        <motion.div
+          animate={{ y: [0, -20, 0], opacity: [0.15, 0.28, 0.15] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -left-32 bottom-20 h-80 w-80 rounded-full bg-[#EFF6FF] blur-3xl"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto mb-14 max-w-3xl text-center md:mb-18"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.4 }}
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#BFDBFE] bg-[#EFF6FF] px-4 py-2 text-sm font-semibold text-[#1D4ED8]"
+          >
+            <Sparkles size={15} />
+            Our Services
+          </motion.div>
+
+          <h2 className="text-4xl font-bold tracking-tight text-[#0F172A] sm:text-5xl md:text-6xl">
+            Digital Solutions For{" "}
+            <span className="block text-[#1D4ED8]">Future Businesses</span>
+          </h2>
+
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 90 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25, duration: 0.6 }}
+            className="mx-auto mt-5 h-1 rounded-full bg-[#2563EB]"
+          />
+
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#64748B] md:text-lg">
+            Everything needed to build, launch and scale your digital presence
+            with cutting-edge technology.
+          </p>
+        </motion.div>
+
+        {/* Services */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                delay: index * 0.06,
+                duration: 0.45,
+                ease: "easeOut",
+              }}
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden rounded-2xl border border-[#DBEAFE] bg-white p-6 shadow-[0_5px_22px_rgba(15,23,42,0.05)] transition-shadow duration-300 hover:border-[#93C5FD] hover:shadow-[0_14px_35px_rgba(37,99,235,0.12)]"
+            >
+              {/* Animated top line */}
+              <motion.div
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "0%" }}
+                transition={{ duration: 0.4 }}
+                className="absolute left-0 right-0 top-0 h-[3px] bg-[#2563EB]"
+              />
+
+              <div className="mb-5 flex items-center justify-between">
+                <motion.div
+                  whileHover={{ scale: 1.06, rotate: 3 }}
+                  className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#EFF6FF] text-[#1D4ED8] transition-colors duration-300 group-hover:bg-[#1D4ED8] group-hover:text-white"
+                >
+                  {service.icon}
+                </motion.div>
+
+                <span className="text-xs font-semibold text-[#CBD5E1]">
+                  0{index + 1}
+                </span>
+              </div>
+
+              <h3 className="text-lg font-bold text-[#0F172A]">
+                {service.title}
+              </h3>
+
+              <p className="mt-3 min-h-[72px] text-sm leading-6 text-[#64748B]">
+                {service.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-14 text-center md:mt-18"
+        >
+          <motion.button
+            onClick={() => navigate("/services")}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-3 rounded-lg bg-[#1D4ED8] px-7 py-3.5 font-semibold text-white shadow-[0_8px_20px_rgba(29,78,216,0.2)] transition-shadow hover:shadow-[0_10px_28px_rgba(29,78,216,0.28)]"
+          >
+            <Sparkles size={17} />
+            Explore All Solutions
+            <ArrowRight size={18} />
+          </motion.button>
+
+          <p className="mt-4 text-sm text-[#94A3B8]">
+            Trusted by 100+ businesses worldwide
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Bottom animated line */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: "100%" }}
+        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+        className="pointer-events-none absolute bottom-0 h-[2px] w-1/3 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-40"
+      />
+    </section>
+  );
 }

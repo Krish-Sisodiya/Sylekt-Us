@@ -7,6 +7,7 @@ import About from "./pages/About";
 import CareersPage from "./pages/Creers";
 import BookingPage from "./pages/BookingPage";
 import ServicesPage from "./pages/ServicePage";
+import Portfolio from "./pages/Portfolio";
 
 
 
@@ -43,7 +44,10 @@ element={<ServicesPage/>}
 />
 
 
-
+<Route
+path="/portfolio"
+element={<Portfolio/>}
+/>
 
 </Routes>
 

@@ -1,593 +1,467 @@
 import { motion } from "framer-motion";
 import {
-ChevronRight,
-Play,
-Sparkles,
-Database,
-Code2,
-Smartphone,
-ShieldCheck
+  ArrowRight,
+  Code2,
+  Palette,
+  ShoppingCart,
+  Share2,
+  Play,
+  Sparkles,
+  CheckCircle2,
 } from "lucide-react";
-
 import type { JSX } from "react";
-import { useNavigate } from "react-router-dom";
-
-export default function Hero():JSX.Element{
-
-const navigate=useNavigate();
-
-return(
-
-<section className="
-relative min-h-screen
-flex items-center
-overflow-hidden
-pt-32 md:pt-40
-">
-
-{/* Ambient Glow */}
-<div className="
-absolute top-20 left-10
-w-72 h-72
-rounded-full
-bg-blue-500/10
-blur-[130px]
-"/>
-
-<div className="
-absolute bottom-0 right-10
-w-80 h-80
-rounded-full
-bg-cyan-400/10
-blur-[150px]
-"/>
-
-
-{/* floating particles */}
-<div className="absolute inset-0 opacity-20">
-<div className="absolute top-40 left-1/4 w-2 h-2 rounded-full bg-cyan-300"/>
-<div className="absolute top-64 right-1/3 w-3 h-3 rounded-full bg-blue-400"/>
-<div className="absolute bottom-32 left-1/3 w-2 h-2 rounded-full bg-green-400"/>
-</div>
-
-
-<div className="
-max-w-7xl mx-auto
-px-6 md:px-10
-grid lg:grid-cols-2
-gap-20
-items-center
-relative z-10
-">
-
-{/* LEFT CONTENT */}
-<div>
-
-<motion.div
-initial={{opacity:0,y:80}}
-animate={{opacity:1,y:0}}
-transition={{
-duration:1.1,
-type:"spring",
-stiffness:70
-}}
->
-
-{/* Premium Badge */}
-<motion.div
-initial={{opacity:0,scale:.9}}
-animate={{opacity:1,scale:1}}
-transition={{delay:.25}}
-className="
-inline-flex items-center gap-2
-
-px-5 py-2.5
-rounded-full
-
-bg-white/[0.04]
-border border-cyan-400/20
-backdrop-blur-xl
-
-text-cyan-300
-text-sm font-medium
-
-mb-8
-
-shadow-[0_0_30px_rgba(0,255,255,.06)]
-"
->
-
-<div className="
-w-6 h-6
-rounded-full
-bg-cyan-400/15
-flex items-center justify-center
-">
-<Sparkles size={12}/>
-</div>
-
-Future Ready Digital Solutions
-
-</motion.div>
-
-
 
-{/* Heading */}
-<h1 className="
-text-5xl
-sm:text-6xl
-md:text-7xl
-xl:text-[88px]
-
-font-bold
-leading-[1]
-tracking-[-0.05em]
-">
-
-Build Your
-
-<span className="
-block mt-2
-
-bg-gradient-to-r
-from-blue-400
-via-cyan-300
-to-green-300
-
-bg-clip-text
-text-transparent
-">
-Business Online
-</span>
-
-</h1>
-
-
-
-<p className="
-mt-7
-text-base md:text-xl
-text-slate-300
-max-w-xl
-leading-relaxed
-">
-Web development, mobile apps,
-hosting and custom software
-engineered to scale your business.
-</p>
-
-
-
-{/* Buttons */}
-<div className="
-flex flex-col sm:flex-row
-gap-4 md:gap-5
-mt-10
-">
-
-<motion.button
-onClick={()=>navigate("/booking")}
-whileHover={{scale:1.05,y:-5}}
-whileTap={{scale:.95}}
-className="
-group
-px-8 py-4
-rounded-full
-font-semibold
-text-white
-
-bg-gradient-to-r
-from-blue-500
-to-cyan-400
-
-flex items-center justify-center gap-2
-
-shadow-[0_0_35px_rgba(0,255,255,.18)]
-"
->
-Start Project
-
-<ChevronRight
-size={18}
-className="group-hover:translate-x-1 transition"
-/>
-
-</motion.button>
-
-
-
-<motion.button
-onClick={()=>navigate("/portfolio")}
-whileHover={{scale:1.04,y:-5}}
-className="
-group
-px-8 py-4
-rounded-full
-border border-cyan-400/20
-
-bg-white/[0.03]
-backdrop-blur-xl
-
-flex items-center justify-center gap-3
-"
->
-
-<div className="
-w-8 h-8
-rounded-full
-bg-white/5
-flex items-center justify-center
-group-hover:scale-110
-transition
-">
-<Play size={14}/>
-</div>
-
-Watch Demo
-
-</motion.button>
-
-</div>
-
-
-
-{/* Compact Premium Stats */}
-<div className="
-grid grid-cols-2 md:grid-cols-4
-gap-3 md:gap-4
-mt-12
-">
-
-{[
-{
-number:"50+",
-label:"Websites",
-icon:<Code2 size={20}/>
-},
-{
-number:"20+",
-label:"Apps",
-icon:<Smartphone size={20}/>
-},
-{
-number:"100+",
-label:"Clients",
-icon:<Sparkles size={20}/>
-},
-{
-number:"24/7",
-label:"Support",
-icon:<ShieldCheck size={20}/>
-}
-
-].map((item,i)=>(
-
-<motion.div
-key={i}
-initial={{opacity:0,y:30}}
-whileInView={{opacity:1,y:0}}
-viewport={{once:true}}
-transition={{
-delay:i*.1,
-duration:.6
-}}
-
-whileHover={{
-y:-6,
-scale:1.03
-}}
-
-className="
-group
-relative
-rounded-[20px]
-p-[1px]
-
-bg-gradient-to-br
-from-blue-500/25
-to-cyan-400/15
-"
->
-
-<div className="
-relative
-rounded-[20px]
-bg-[#0b1730]
-border border-white/8
-
-px-4 py-5 md:px-5 md:py-6
-text-center
-overflow-hidden
-">
-
-<div className="
-absolute inset-0
-opacity-0
-group-hover:opacity-100
-transition duration-500
-
-bg-gradient-to-br
-from-blue-500/5
-to-cyan-400/5
-"/>
-
-<div className="relative z-10">
-
-<div className="
-w-10 h-10
-md:w-11 md:h-11
-
-mx-auto mb-3
-rounded-xl
-
-flex items-center justify-center
-
-bg-blue-500/15
-text-cyan-300
-
-group-hover:scale-110
-transition
-">
-{item.icon}
-</div>
-
-<h3 className="
-text-xl md:text-3xl
-font-bold
-mb-1
-text-white
-">
-{item.number}
-</h3>
-
-<p className="
-text-[11px]
-md:text-sm
-font-medium
-text-slate-400
-tracking-wide
-">
-{item.label}
-</p>
-
-</div>
-
-
-<div className="
-absolute bottom-0 left-0
-h-[2px] w-0
-group-hover:w-full
-
-bg-gradient-to-r
-from-blue-500
-to-cyan-400
-
-transition-all duration-500
-"/>
-
-</div>
-
-</motion.div>
-
-))}
-
-</div>
-
-</motion.div>
-</div>
-
-{/* RIGHT SIDE */}
-<div className="relative flex justify-center">
-
-
-{/* floating code card */}
-<motion.div
-animate={{y:[0,-18,0]}}
-transition={{
-repeat:Infinity,
-duration:6
-}}
-className="
-absolute
--top-10 left-0
-z-20
-
-rounded-3xl
-bg-[#0b1e39]
-border border-cyan-400/10
-backdrop-blur-xl
-
-p-6
-w-[320px]
-hidden md:block
-"
->
-
-<p className="text-cyan-300 mb-4">
-function buildSuccess() {"{"}
-</p>
-
-<p className="text-slate-300">
-const brand = "Your Vision";
-</p>
-
-<p className="text-slate-300">
-const tech = "Sylect Us";
-</p>
-
-<p className="text-green-400">
-return scale(brand);
-</p>
-
-<p>{"}"}</p>
-
-</motion.div>
-
-
-
-
-{/* Main Mockup */}
-<motion.div
-animate={{y:[0,-20,0]}}
-transition={{
-repeat:Infinity,
-duration:7
-}}
-className="
-w-full max-w-2xl
-rounded-[35px]
-p-[1px]
-
-bg-gradient-to-r
-from-blue-500
-to-cyan-400
-
-shadow-[0_0_50px_rgba(0,180,255,.18)]
-"
->
-
-<div className="
-bg-[#08172d]
-rounded-[35px]
-p-8
-min-h-[520px]
-">
-
-<div className="flex gap-3 mb-8">
-<div className="w-4 h-4 rounded-full bg-red-400"/>
-<div className="w-4 h-4 rounded-full bg-yellow-400"/>
-<div className="w-4 h-4 rounded-full bg-green-400"/>
-</div>
-
-
-
-<div className="grid grid-cols-2 gap-5">
-
-{/* box 1 */}
-<div className="
-rounded-3xl
-bg-blue-500/10
-p-6
-">
-<Code2 className="mb-4 text-cyan-300"/>
-<p className="text-sm text-slate-300">
-Frontend Systems
-</p>
-<p className="text-cyan-300 mt-2">
-React + TypeScript
-</p>
-</div>
-
-
-{/* box2 */}
-<div className="
-rounded-3xl
-bg-green-400/10
-p-6
-">
-<Database className="mb-4 text-green-300"/>
-<p className="text-sm text-slate-300">
-Backend APIs
-</p>
-<p className="text-green-300 mt-2">
-Spring / Node
-</p>
-</div>
-
-
-
-{/* big code box */}
-<div className="
-col-span-2
-rounded-3xl
-bg-white/[0.03]
-border border-white/5
-p-8
-">
-
-<p className="text-cyan-300">
-&lt;h1&gt;We Build Digital Success&lt;/h1&gt;
-</p>
-
-<p className="text-slate-400 mt-6">
-&lt;p&gt;Your vision, our code.&lt;/p&gt;
-</p>
-
-<div className="
-mt-8 h-[2px]
-bg-gradient-to-r
-from-blue-500
-to-cyan-400
-"/>
-
-</div>
-
-</div>
-
-
-
-<div className="
-mt-8 flex gap-4
-">
-
-<div className="
-flex-1 rounded-full
-bg-blue-500/10
-p-4 flex items-center gap-3
-">
-<ShieldCheck size={18}/>
-Secure
-</div>
-
-<div className="
-flex-1 rounded-full
-bg-green-400/10
-p-4 flex items-center gap-3
-">
-⚡ Fast
-</div>
-
-</div>
-
-
-</div>
-
-</motion.div>
-
-
-
-{/* floating badge */}
-<motion.div
-animate={{y:[0,-15,0]}}
-transition={{
-repeat:Infinity,
-duration:4
-}}
-className="
-absolute
-bottom-10 -right-4
-
-rounded-2xl
-bg-white/[0.03]
-border border-white/8
-
-p-5
-"
->
-
-<p className="text-green-400 font-semibold">
-100+ Projects Delivered
-</p>
-
-</motion.div>
-
-
-</div>
-
-</div>
-
-</section>
-
-)
-
+const services = [
+  {
+    title: "Web Development",
+    description:
+      "Custom websites & web apps built for speed, SEO & scale",
+    icon: Code2,
+  },
+  {
+    title: "Graphic Design",
+    description:
+      "Stunning logos, branding & visuals that stand out",
+    icon: Palette,
+  },
+  {
+    title: "E-commerce",
+    description:
+      "Online stores that convert with seamless checkout",
+    icon: ShoppingCart,
+  },
+  {
+    title: "Social Media",
+    description:
+      "Grow your brand with engaging content & strategy",
+    icon: Share2,
+  },
+];
+
+const WHATSAPP_NUMBER = "917389812435";
+
+// 👇 Yaha apna exact Instagram username/page daalna
+const INSTAGRAM_URL = "https://www.instagram.com/YOUR_USERNAME/";
+
+export default function Hero(): JSX.Element {
+  /* =====================================================
+     WHATSAPP
+  ===================================================== */
+
+  const openWhatsApp = () => {
+    const message = encodeURIComponent(
+      "Hello Sylekt Us 👋\n\nI would like to discuss a project with you."
+    );
+
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  /* =====================================================
+     INSTAGRAM
+  ===================================================== */
+
+  const openInstagram = () => {
+    window.open(
+      INSTAGRAM_URL,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-white pt-28 md:pt-32">
+      {/* =====================================================
+          BACKGROUND SHAPES
+      ===================================================== */}
+
+      <motion.div
+        animate={{
+          x: [0, 35, 0],
+          y: [0, -25, 0],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute -left-40 top-24 h-80 w-80 rounded-full bg-blue-100/70 blur-3xl"
+      />
+
+      <motion.div
+        animate={{
+          x: [0, -30, 0],
+          y: [0, 30, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute -right-32 top-40 h-96 w-96 rounded-full bg-blue-50 blur-3xl"
+      />
+
+      {/* =====================================================
+          GRID
+      ===================================================== */}
+
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#2563eb 1px, transparent 1px), linear-gradient(90deg, #2563eb 1px, transparent 1px)",
+          backgroundSize: "50px 50px",
+        }}
+      />
+
+      {/* =====================================================
+          MAIN CONTENT
+      ===================================================== */}
+
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 py-14 md:px-10 lg:grid-cols-2 lg:gap-16 lg:py-20">
+        {/* =================================================
+            LEFT
+        ================================================= */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
+          className="max-w-2xl"
+        >
+          {/* Badge */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.95,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              delay: 0.15,
+              duration: 0.5,
+            }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700"
+          >
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-white">
+              <Sparkles size={13} />
+            </span>
+
+            Future Ready Digital Solutions
+          </motion.div>
+
+          {/* Heading */}
+
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.25,
+              duration: 0.65,
+            }}
+            className="text-5xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-6xl md:text-7xl"
+          >
+            Build Your
+
+            <span className="block text-blue-600">
+              Business with
+            </span>
+
+            <motion.span
+              animate={{
+                opacity: [0.85, 1, 0.85],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+              }}
+              className="block text-blue-800"
+            >
+              Sylect Us
+            </motion.span>
+          </motion.h1>
+
+          {/* Description */}
+
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 18,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.4,
+              duration: 0.6,
+            }}
+            className="mt-6 max-w-xl text-base leading-7 text-slate-600 md:text-lg"
+          >
+            We transform your vision into reality with
+            cutting-edge technology, creative design, and
+            smart digital strategies that scale your
+            business.
+          </motion.p>
+
+          {/* =================================================
+              BUTTONS
+          ================================================= */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 18,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.5,
+              duration: 0.6,
+            }}
+            className="mt-8 flex flex-col gap-3 sm:flex-row"
+          >
+            {/* ================= START PROJECT ================= */}
+
+            <motion.button
+              onClick={openWhatsApp}
+              whileHover={{
+                y: -3,
+                scale: 1.02,
+              }}
+              whileTap={{
+                scale: 0.97,
+              }}
+              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/30"
+            >
+              Start Project
+
+              <ArrowRight
+                size={18}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </motion.button>
+
+            {/* ================= WATCH DEMO ================= */}
+
+            <motion.button
+              onClick={openInstagram}
+              whileHover={{
+                y: -3,
+                scale: 1.01,
+              }}
+              whileTap={{
+                scale: 0.97,
+              }}
+              className="group inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-3.5 font-semibold text-slate-700 shadow-sm transition duration-300 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 hover:shadow-md"
+            >
+              <motion.span
+                whileHover={{
+                  rotate: 8,
+                  scale: 1.08,
+                }}
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-100"
+              >
+                <Play
+                  size={13}
+                  className="ml-0.5"
+                />
+              </motion.span>
+
+              Watch Demo
+            </motion.button>
+          </motion.div>
+
+          {/* =================================================
+              STATS
+          ================================================= */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              delay: 0.7,
+              duration: 0.6,
+            }}
+            className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500"
+          >
+            <span className="flex items-center gap-2">
+              <CheckCircle2
+                size={16}
+                className="text-blue-600"
+              />
+
+              100+ Happy Clients
+            </span>
+
+            <span className="flex items-center gap-2">
+              <CheckCircle2
+                size={16}
+                className="text-blue-600"
+              />
+
+              4.9/5 Rating
+            </span>
+          </motion.div>
+        </motion.div>
+
+        {/* =================================================
+            RIGHT - SERVICE CARDS
+        ================================================= */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: 35,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+          }}
+          className="relative"
+        >
+          <div className="absolute -inset-5 rounded-3xl bg-blue-100/50 blur-2xl" />
+
+          <div className="relative grid grid-cols-2 gap-4">
+            {services.map(
+              (service, index) => {
+                const Icon = service.icon;
+
+                return (
+                  <motion.div
+                    key={service.title}
+                    initial={{
+                      opacity: 0,
+                      y: 25,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      delay:
+                        0.35 + index * 0.1,
+                      duration: 0.5,
+                    }}
+                    whileHover={{
+                      y: -6,
+                      scale: 1.015,
+                    }}
+                    className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:border-blue-200 hover:shadow-xl hover:shadow-blue-100/60"
+                  >
+                    {/* Icon */}
+
+                    <motion.div
+                      animate={{
+                        y: [0, -4, 0],
+                      }}
+                      transition={{
+                        duration:
+                          3 + index * 0.4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="mb-7 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-600/20"
+                    >
+                      <Icon size={23} />
+                    </motion.div>
+
+                    <h3 className="text-base font-bold text-slate-900">
+                      {service.title}
+                    </h3>
+
+                    <p className="mt-2 text-xs leading-5 text-slate-500">
+                      {service.description}
+                    </p>
+
+                    <div className="mt-5 h-1 w-10 overflow-hidden rounded-full bg-blue-100">
+                      <motion.div
+                        animate={{
+                          x: [-40, 40],
+                        }}
+                        transition={{
+                          duration: 2.5,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                        className="h-full w-8 rounded-full bg-blue-600"
+                      />
+                    </div>
+
+                    <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-blue-50 transition-transform duration-500 group-hover:scale-150" />
+                  </motion.div>
+                );
+              }
+            )}
+          </div>
+
+          {/* Floating Accent */}
+
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+              rotate: [0, 5, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute -right-3 -top-5 hidden h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-600/25 md:flex"
+          >
+            <Code2 size={20} />
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* =====================================================
+          BOTTOM ACCENT
+      ===================================================== */}
+
+      <motion.div
+        initial={{
+          scaleX: 0,
+        }}
+        animate={{
+          scaleX: 1,
+        }}
+        transition={{
+          duration: 1.2,
+          ease: "easeOut",
+        }}
+        className="absolute bottom-0 left-0 h-1 w-full origin-left bg-gradient-to-r from-blue-600 via-blue-400 to-transparent"
+      />
+    </section>
+  );
 }

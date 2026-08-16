@@ -1,255 +1,476 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
-Code2,
-Smartphone,
-Palette,
-Layout,
-Bot,
-Globe,
-Server,
-Rocket,
-Database,
-GraduationCap,
-Megaphone,
-ChevronDown,
-CheckCircle2,
-Sparkles
+  Code2,
+  Smartphone,
+  Palette,
+  Layout,
+  Bot,
+  Globe,
+  Server,
+  Rocket,
+  Database,
+  GraduationCap,
+  Megaphone,
+  Sparkles,
+  ArrowUpRight,
 } from "lucide-react";
 
 const services = [
-{
- title:'Web Development',
- icon:Code2,
- short:'Business websites, portals and web applications.',
- details:[
- 'Custom business websites',
- 'Admin dashboards & portals',
- 'E-commerce solutions',
- 'Responsive performance optimization'
- ]
-},
-{
- title:'App Development',
- icon:Smartphone,
- short:'Android, iOS and cross-platform mobile apps.',
- details:[
- 'React Native apps',
- 'Native integrations',
- 'App deployment support',
- 'Maintenance & upgrades'
- ]
-},
-{
- title:'Graphics Design',
- icon:Palette,
- short:'Branding, posters, social creatives and UI graphics.',
- details:[
- 'Logo & identity',
- 'Marketing creatives',
- 'Presentation design',
- 'Digital assets'
- ]
-},
-{
- title:'UI / UX Design',
- icon:Layout,
- short:'Premium interfaces and product experiences.',
- details:[
- 'Wireframing',
- 'Figma prototypes',
- 'Design systems',
- 'User experience flows'
- ]
-},
-{
- title:'AI Integrations',
- icon:Bot,
- short:'Automation, chatbots and AI-powered workflows.',
- details:[
- 'Chatbot integration',
- 'Workflow automation',
- 'AI assistants',
- 'Custom AI features'
- ]
-},
-{
- title:'Hosting & Deployment',
- icon:Server,
- short:'Deployment pipelines and cloud hosting setup.',
- details:[
- 'VPS setup',
- 'Cloud deployment',
- 'CI/CD pipelines',
- 'Security hardening'
- ]
-},
-{
- title:'Domain Services',
- icon:Globe,
- short:'Domain registration and business email setup.',
- details:[
- 'Domain purchase help',
- 'DNS management',
- 'SSL setup',
- 'Professional mail'
- ]
-},
-{
- title:'Custom Software',
- icon:Database,
- short:'ERP, CRM and custom business software.',
- details:[
- 'Management systems',
- 'Automation software',
- 'Enterprise tools',
- 'Custom integrations'
- ]
-},
-{
- title:'College Projects',
- icon:GraduationCap,
- short:'Academic and major project guidance.',
- details:[
- 'Final year projects',
- 'Documentation',
- 'Live demos',
- 'Deployment support'
- ]
-},
-{
- title:'Social Media Handling',
- icon:Megaphone,
- short:'Content planning and digital growth support.',
- details:[
- 'Posting strategy',
- 'Brand growth',
- 'Ad creatives',
- 'Campaign support'
- ]
-},
-{
- title:'Product Launch Support',
- icon:Rocket,
- short:'Launch strategy and product go-to-market support.',
- details:[
- 'Landing pages',
- 'Launch campaigns',
- 'Tech setup',
- 'Growth optimization'
- ]
-}
+  {
+    title: "Web Development",
+    icon: Code2,
+    short: "Business websites, portals and web applications.",
+  },
+  {
+    title: "App Development",
+    icon: Smartphone,
+    short: "Android, iOS and cross-platform mobile apps.",
+  },
+  {
+    title: "Graphics Design",
+    icon: Palette,
+    short: "Branding, posters, social creatives and UI graphics.",
+  },
+  {
+    title: "UI / UX Design",
+    icon: Layout,
+    short: "Premium interfaces and product experiences.",
+  },
+  {
+    title: "AI Integrations",
+    icon: Bot,
+    short: "Automation, chatbots and AI-powered workflows.",
+  },
+  {
+    title: "Hosting & Deployment",
+    icon: Server,
+    short: "Deployment pipelines and cloud hosting setup.",
+  },
+  {
+    title: "Domain Services",
+    icon: Globe,
+    short: "Domain registration and business email setup.",
+  },
+  {
+    title: "Custom Software",
+    icon: Database,
+    short: "ERP, CRM and custom business software.",
+  },
+  {
+    title: "College Projects",
+    icon: GraduationCap,
+    short: "Academic and major project guidance.",
+  },
+  {
+    title: "Social Media Handling",
+    icon: Megaphone,
+    short: "Content planning and digital growth support.",
+  },
+  {
+    title: "Product Launch Support",
+    icon: Rocket,
+    short: "Launch strategy and product go-to-market support.",
+  },
 ];
 
-export default function ServicesPage(){
-const [openCard,setOpenCard]=useState<number | null>(null);
+export default function ServicesPage() {
+  return (
+    <div className="relative min-h-screen overflow-hidden bg-white text-slate-900">
 
-return (
-<div className='min-h-screen bg-[#030712] text-white overflow-hidden'>
+      {/* ================= BACKGROUND ================= */}
 
-<div className='absolute top-10 left-0 w-[28rem] h-[28rem] bg-cyan-500/10 rounded-full blur-[170px]' />
-<div className='absolute bottom-0 right-0 w-[35rem] h-[35rem] bg-blue-500/10 rounded-full blur-[190px]' />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
-<section className='relative max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-28'>
+        {/* Left Blue Glow */}
+        <motion.div
+          animate={{
+            x: [0, 80, 0],
+            y: [0, -60, 0],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-blue-100 blur-[120px]"
+        />
 
-<motion.div
-initial={{opacity:0,y:30}}
-animate={{opacity:1,y:0}}
-className='text-center max-w-5xl mx-auto mb-24'>
+        {/* Right Blue Glow */}
+        <motion.div
+          animate={{
+            x: [0, -80, 0],
+            y: [0, 70, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 14,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute -right-40 top-[40%] h-[550px] w-[550px] rounded-full bg-blue-50 blur-[130px]"
+        />
 
-<div className='inline-flex items-center gap-2 px-6 py-3 rounded-full border border-cyan-400/20 bg-white/5 text-cyan-300 mb-8'>
-<Sparkles size={16}/> Our Services
-</div>
+        {/* Grid */}
+        <div
+          className="absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage: `
+              linear-gradient(#1D4ED8 1px, transparent 1px),
+              linear-gradient(90deg, #1D4ED8 1px, transparent 1px)
+            `,
+            backgroundSize: "70px 70px",
+          }}
+        />
 
-<h1 className='text-5xl md:text-7xl font-bold leading-[1.03] tracking-[-0.03em]'>
-Solutions We Offer
-<span className='block mt-2 bg-gradient-to-r from-cyan-300 to-blue-500 bg-clip-text text-transparent'>For Modern Businesses</span>
-</h1>
+        {/* Floating Circle */}
+        <motion.div
+          animate={{
+            y: [0, -40, 0],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute right-[8%] top-[20%] h-20 w-20 rounded-full border border-blue-200"
+        />
 
-<p className='mt-8 text-lg md:text-xl text-slate-400 max-w-3xl mx-auto'>
-Explore our services. Click any card to view detailed scope and offerings.
-</p>
+        {/* Small Floating Circle */}
+        <motion.div
+          animate={{
+            y: [0, 50, 0],
+            x: [0, 30, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-[15%] left-[5%] h-14 w-14 rounded-full border-2 border-blue-100"
+        />
+      </div>
 
-</motion.div>
+      {/* ================= MAIN ================= */}
 
+      <section className="relative mx-auto max-w-7xl px-6 pb-28 pt-32 md:px-10">
 
-<div className='grid md:grid-cols-2 xl:grid-cols-3 gap-8'>
+        {/* ================= HEADER ================= */}
 
-{services.map((service,index)=>{
-const Icon = service.icon;
-const open = openCard===index;
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 35,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="mx-auto mb-20 max-w-4xl text-center"
+        >
 
-return(
-<motion.div
-key={service.title}
-initial={{opacity:0,y:50}}
-whileInView={{opacity:1,y:0}}
-transition={{delay:index*.06}}
-viewport={{once:true}}
-whileHover={{y:-8}}
-className='rounded-[34px] p-[1px] bg-gradient-to-br from-cyan-400/40 to-blue-500/30'>
+          {/* Badge */}
 
-<div className='rounded-[34px] bg-[#08172d] border border-white/5 p-8'>
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.9,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              delay: 0.2,
+            }}
+            className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-5 py-2.5 text-sm font-semibold text-[#1D4ED8] shadow-sm"
+          >
+            <motion.div
+              animate={{
+                rotate: [0, 15, -15, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+              }}
+            >
+              <Sparkles size={16} />
+            </motion.div>
 
-<div className='w-16 h-16 rounded-3xl bg-cyan-500/10 flex items-center justify-center mb-8'>
-<Icon size={32}/>
-</div>
+            Our Services
+          </motion.div>
 
-<h3 className='text-3xl font-bold'>
-{service.title}
-</h3>
+          {/* Heading */}
 
-<p className='text-slate-400 mt-5 leading-relaxed'>
-{service.short}
-</p>
+          <h1 className="mt-7 text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-900 md:text-7xl">
+            Solutions We Offer
 
-<button
-onClick={()=>setOpenCard(open ? null : index)}
-className='mt-8 w-full rounded-full px-7 py-4 font-semibold bg-gradient-to-r from-blue-500 to-cyan-400 inline-flex justify-center items-center gap-3'>
-View Details
-<motion.div animate={{rotate:open ? 180 : 0}}>
-<ChevronDown size={18}/>
-</motion.div>
-</button>
+            <motion.span
+              className="mt-3 block bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#60A5FA] bg-clip-text text-transparent"
+              animate={{
+                backgroundPosition: [
+                  "0% 50%",
+                  "100% 50%",
+                  "0% 50%",
+                ],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              style={{
+                backgroundSize: "200% auto",
+              }}
+            >
+              For Modern Businesses
+            </motion.span>
+          </h1>
 
+          {/* Description */}
 
-<AnimatePresence>
-{open &&(
-<motion.div
-initial={{height:0,opacity:0}}
-animate={{height:'auto',opacity:1}}
-exit={{height:0,opacity:0}}
-className='overflow-hidden'>
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 15,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.4,
+            }}
+            className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-slate-500 md:text-xl"
+          >
+            Explore our services and discover smart digital solutions
+            designed to help your business grow.
+          </motion.p>
+        </motion.div>
 
-<div className='mt-8 border-t border-white/10 pt-8 grid gap-4'>
-{service.details.map(item=>(
-<div key={item} className='flex gap-4 items-center bg-white/5 border border-white/10 rounded-2xl p-4'>
-<CheckCircle2 className='text-cyan-300'/>
-<span>{item}</span>
-</div>
-))}
+        {/* ================= SERVICES GRID ================= */}
 
-<div className='mt-4 rounded-2xl bg-cyan-500/5 border border-cyan-400/20 p-5 text-slate-300 leading-relaxed'>
-This service can be customized based on business requirements, project scope and technology stack.
-</div>
+        <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
 
-</div>
+          {services.map((service, index) => {
+            const Icon = service.icon;
 
-</motion.div>
-)}
-</AnimatePresence>
+            return (
+              <motion.div
+                key={service.title}
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  duration: 0.55,
+                  delay: index * 0.06,
+                }}
+                whileHover={{
+                  y: -8,
+                }}
+                className="group relative"
+              >
 
+                {/* Animated Border */}
 
-</div>
+                <div
+                  className="absolute -inset-[1px] rounded-[28px] bg-gradient-to-br from-blue-200 via-blue-100 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+                />
 
-</motion.div>
-)
-})}
+                {/* Card */}
 
-</div>
+                <div
+                  className="relative rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 group-hover:shadow-[0_18px_45px_rgba(29,78,216,0.12)]"
+                >
 
-</section>
+                  {/* Top Accent */}
 
-</div>
-)
+                  <motion.div
+                    initial={{
+                      width: 0,
+                    }}
+                    whileInView={{
+                      width: "45px",
+                    }}
+                    transition={{
+                      delay: 0.3 + index * 0.04,
+                      duration: 0.5,
+                    }}
+                    className="mb-6 h-1 rounded-full bg-[#1D4ED8]"
+                  />
+
+                  {/* Icon */}
+
+                  <motion.div
+                    whileHover={{
+                      scale: 1.08,
+                      rotate: 4,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                    }}
+                    className="flex h-16 w-16 items-center justify-center rounded-2xl border border-blue-100 bg-blue-50 text-[#1D4ED8] shadow-sm transition-colors duration-300 group-hover:bg-[#1D4ED8] group-hover:text-white"
+                  >
+                    <Icon
+                      size={29}
+                      strokeWidth={2}
+                    />
+                  </motion.div>
+
+                  {/* Title */}
+
+                  <h3 className="mt-7 text-2xl font-bold text-slate-900">
+                    {service.title}
+                  </h3>
+
+                  {/* Description */}
+
+                  <p className="mt-3 min-h-[52px] leading-relaxed text-slate-500">
+                    {service.short}
+                  </p>
+
+                  {/* Bottom Accent */}
+
+                  <div className="mt-7 flex items-center gap-2">
+                    <motion.div
+                      initial={{
+                        width: 25,
+                      }}
+                      whileHover={{
+                        width: 45,
+                      }}
+                      className="h-[3px] rounded-full bg-[#1D4ED8]"
+                    />
+
+                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+                      Sylekt Us
+                    </span>
+                  </div>
+
+                  {/* Decorative Circle */}
+
+                  <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-blue-50 opacity-0 transition-all duration-500 group-hover:scale-125 group-hover:opacity-100" />
+
+                </div>
+              </motion.div>
+            );
+          })}
+
+        </div>
+
+        {/* ================= BOTTOM CTA ================= */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="relative mt-20 flex flex-col items-center justify-between gap-7 overflow-hidden rounded-[30px] bg-gradient-to-r from-[#1D4ED8] to-[#2563EB] p-8 text-white shadow-[0_20px_50px_rgba(29,78,216,0.18)] md:flex-row md:p-12"
+        >
+
+          {/* CTA Glow */}
+
+          <motion.div
+            animate={{
+              x: [-100, 400, -100],
+              opacity: [0, 0.2, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="absolute bottom-0 top-0 w-40 bg-white/20 blur-3xl"
+          />
+
+          {/* CTA Text */}
+
+          <div className="relative z-10">
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Have a project in mind?
+            </h2>
+
+            <p className="mt-2 text-blue-100">
+              Let's build something amazing together.
+            </p>
+          </div>
+
+          {/* WhatsApp Button */}
+
+          <motion.a
+            href="https://wa.me/917389812435"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{
+              scale: 1.05,
+              y: -2,
+            }}
+            whileTap={{
+              scale: 0.96,
+            }}
+            className="relative z-10 flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 font-bold text-[#1D4ED8] shadow-lg"
+          >
+            Let's Talk
+
+            <motion.span
+              animate={{
+                x: [0, 4, 0],
+                y: [0, -2, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <ArrowUpRight size={19} />
+            </motion.span>
+          </motion.a>
+
+        </motion.div>
+
+      </section>
+
+      {/* Bottom Line */}
+
+      <motion.div
+        initial={{
+          x: "-100%",
+        }}
+        animate={{
+          x: "100%",
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="pointer-events-none absolute bottom-0 h-[2px] w-1/3 bg-gradient-to-r from-transparent via-[#2563EB] to-transparent opacity-40"
+      />
+
+    </div>
+  );
 }
