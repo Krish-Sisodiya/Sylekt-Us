@@ -41,7 +41,7 @@ const services = [
 const WHATSAPP_NUMBER = "917389812435";
 
 // 👇 Yaha apna exact Instagram username/page daalna
-const INSTAGRAM_URL = "https://www.instagram.com/YOUR_USERNAME/";
+const INSTAGRAM_URL = "https://www.instagram.com/sylektus?igsi=MzFmY21hempyeWZq";
 
 export default function Hero(): JSX.Element {
   /* =====================================================
@@ -198,7 +198,7 @@ export default function Hero(): JSX.Element {
               }}
               className="block text-blue-800"
             >
-              Sylect Us
+              Sylekt Us
             </motion.span>
           </motion.h1>
 

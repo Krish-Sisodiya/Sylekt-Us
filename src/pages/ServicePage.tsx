@@ -6,70 +6,344 @@ import {
   Layout,
   Bot,
   Globe,
-  Server,
   Rocket,
   Database,
   GraduationCap,
   Megaphone,
   Sparkles,
   ArrowUpRight,
+  BadgeCheck,
+  BookOpen,
+  BrainCircuit,
+  BriefcaseBusiness,
+  Building2,
+  Clapperboard,
+  Cloud,
+  CreditCard,
+  FileText,
+  Image,
+  ImagePlus,
+  ListChecks,
+  Mail,
+  MapPin,
+  Monitor,
+  PanelsTopLeft,
+  PenTool,
+  Plug,
+  Search,
+  Share2,
+  ShoppingBag,
+  ShoppingCart,
+  Store,
+  TabletSmartphone,
+  TrendingUp,
+  UsersRound,
+  Video,
+  Workflow,
+  Wrench,
+  Zap,
 } from "lucide-react";
 
 const services = [
   {
-    title: "Web Development",
+    title: "Website Development",
     icon: Code2,
-    short: "Business websites, portals and web applications.",
+    short:
+      "Modern, responsive and high-performance websites for businesses and brands.",
   },
   {
-    title: "App Development",
+    title: "E-Commerce Development",
+    icon: ShoppingCart,
+    short:
+      "Complete online shopping websites with products, cart, checkout and payments.",
+  },
+  {
+    title: "Web Application Development",
+    icon: Monitor,
+    short:
+      "Scalable and powerful web applications tailored to your business needs.",
+  },
+  {
+    title: "Custom Software Development",
+    icon: Database,
+    short:
+      "Custom software solutions designed around your unique business workflow.",
+  },
+  {
+    title: "Android App Development",
     icon: Smartphone,
-    short: "Android, iOS and cross-platform mobile apps.",
+    short:
+      "Feature-rich Android applications with smooth performance and modern UI.",
   },
   {
-    title: "Graphics Design",
-    icon: Palette,
-    short: "Branding, posters, social creatives and UI graphics.",
+    title: "iOS App Development",
+    icon: TabletSmartphone,
+    short:
+      "Premium iPhone and iPad applications built for great user experiences.",
+  },
+  {
+    title: "Cross-Platform App Development",
+    icon: Smartphone,
+    short:
+      "One powerful application experience across Android and iOS platforms.",
   },
   {
     title: "UI / UX Design",
     icon: Layout,
-    short: "Premium interfaces and product experiences.",
+    short:
+      "Clean, attractive and conversion-focused interfaces for digital products.",
   },
   {
-    title: "AI Integrations",
-    icon: Bot,
-    short: "Automation, chatbots and AI-powered workflows.",
+    title: "Landing Page Design",
+    icon: PanelsTopLeft,
+    short:
+      "High-converting landing pages designed for campaigns, products and services.",
   },
   {
-    title: "Hosting & Deployment",
-    icon: Server,
-    short: "Deployment pipelines and cloud hosting setup.",
+    title: "Portfolio Website Design",
+    icon: BriefcaseBusiness,
+    short:
+      "Professional portfolio websites to showcase your skills, work and achievements.",
   },
   {
-    title: "Domain Services",
+    title: "Business Website Design",
+    icon: Building2,
+    short:
+      "Professional corporate websites that build trust and strengthen your brand.",
+  },
+  {
+    title: "WordPress Development",
     icon: Globe,
-    short: "Domain registration and business email setup.",
+    short:
+      "Flexible and easy-to-manage WordPress websites for businesses and creators.",
   },
   {
-    title: "Custom Software",
-    icon: Database,
-    short: "ERP, CRM and custom business software.",
+    title: "Shopify Development",
+    icon: Store,
+    short:
+      "Beautiful Shopify stores with product management, payments and customization.",
   },
   {
-    title: "College Projects",
-    icon: GraduationCap,
-    short: "Academic and major project guidance.",
+    title: "WooCommerce Development",
+    icon: ShoppingBag,
+    short:
+      "Powerful WooCommerce stores with complete online selling functionality.",
   },
   {
-    title: "Social Media Handling",
+    title: "Quick Commerce Solutions",
+    icon: Zap,
+    short:
+      "Fast delivery platforms and digital solutions for modern quick-commerce businesses.",
+  },
+  {
+    title: "Online Store Setup",
+    icon: Store,
+    short:
+      "Complete online store setup including products, categories, payments and shipping.",
+  },
+  {
+    title: "Product Listing Services",
+    icon: ListChecks,
+    short:
+      "Professional product listings with optimized titles, descriptions and details.",
+  },
+  {
+    title: "Product Catalogue Design",
+    icon: BookOpen,
+    short:
+      "Attractive digital product catalogues designed to present products professionally.",
+  },
+  {
+    title: "Marketplace Management",
+    icon: Store,
+    short:
+      "Manage products, listings, orders and digital presence across marketplaces.",
+  },
+  {
+    title: "Amazon Store Management",
+    icon: ShoppingBag,
+    short:
+      "Professional Amazon listing, catalogue and store management services.",
+  },
+  {
+    title: "Flipkart Store Management",
+    icon: ShoppingCart,
+    short:
+      "Complete Flipkart product listing and marketplace management support.",
+  },
+  {
+    title: "Social Media Management",
+    icon: Share2,
+    short:
+      "Strategic social media management to grow your audience and online presence.",
+  },
+  {
+    title: "Instagram Marketing",
+    icon: Share2,
+    short:
+      "Strategic Instagram marketing to increase reach, engagement and brand visibility.",
+  },
+  {
+    title: "Facebook Marketing",
     icon: Megaphone,
-    short: "Content planning and digital growth support.",
+    short:
+      "Targeted Facebook marketing campaigns to reach and engage potential customers.",
   },
   {
-    title: "Product Launch Support",
+    title: "Google Ads Management",
+    icon: Search,
+    short:
+      "Performance-focused Google Ads campaigns designed to generate quality leads.",
+  },
+  {
+    title: "Meta Ads Management",
+    icon: Megaphone,
+    short:
+      "Facebook and Instagram advertising campaigns optimized for better results.",
+  },
+  {
+    title: "YouTube Marketing",
+    icon: Video,
+    short:
+      "YouTube promotion and content marketing to grow your channel and audience.",
+  },
+  {
+    title: "SEO Optimization",
+    icon: TrendingUp,
+    short:
+      "Search engine optimization to improve rankings, visibility and organic traffic.",
+  },
+  {
+    title: "Local SEO",
+    icon: MapPin,
+    short:
+      "Improve your local search visibility and attract customers around your business.",
+  },
+  {
+    title: "Content Marketing",
+    icon: FileText,
+    short:
+      "Engaging content strategies that attract audiences and build brand authority.",
+  },
+  {
+    title: "Graphic Design",
+    icon: Palette,
+    short:
+      "Creative visual designs for brands, businesses, campaigns and digital platforms.",
+  },
+  {
+    title: "Logo Design",
+    icon: PenTool,
+    short:
+      "Unique and memorable logos designed to represent your brand identity.",
+  },
+  {
+    title: "Brand Identity Design",
+    icon: BadgeCheck,
+    short:
+      "Complete visual identity systems that create a strong and consistent brand.",
+  },
+  {
+    title: "Social Media Post Design",
+    icon: Image,
+    short:
+      "Professional and engaging social media creatives for daily brand promotion.",
+  },
+  {
+    title: "Banner & Poster Design",
+    icon: ImagePlus,
+    short:
+      "Eye-catching banners, posters and promotional creatives for your campaigns.",
+  },
+  {
+    title: "Brochure & Catalogue Design",
+    icon: BookOpen,
+    short:
+      "Professional brochures and catalogues that showcase your products and services.",
+  },
+  {
+    title: "Video Editing",
+    icon: Video,
+    short:
+      "Professional video editing for advertisements, business videos and social media.",
+  },
+  {
+    title: "Motion Graphics",
+    icon: Sparkles,
+    short:
+      "Animated graphics and visual effects that make your content more engaging.",
+  },
+  {
+    title: "Reels & Shorts Creation",
+    icon: Clapperboard,
+    short:
+      "Creative short-form videos designed for Instagram, YouTube and social platforms.",
+  },
+  {
+    title: "AI Chatbot Development",
+    icon: Bot,
+    short:
+      "Smart AI chatbots that automate customer support and business conversations.",
+  },
+  {
+    title: "AI Automation Solutions",
+    icon: BrainCircuit,
+    short:
+      "AI-powered automation solutions that save time and improve business productivity.",
+  },
+  {
+    title: "API Integration",
+    icon: Plug,
+    short:
+      "Connect your applications with payment, CRM, maps, AI and third-party APIs.",
+  },
+  {
+    title: "Payment Gateway Integration",
+    icon: CreditCard,
+    short:
+      "Secure online payment integration for websites, apps and e-commerce platforms.",
+  },
+  {
+    title: "CRM Development",
+    icon: UsersRound,
+    short:
+      "Custom CRM systems to manage customers, leads, sales and business operations.",
+  },
+  {
+    title: "ERP Software Development",
+    icon: Workflow,
+    short:
+      "Integrated ERP solutions for managing business processes from one platform.",
+  },
+  {
+    title: "Cloud Hosting & Deployment",
+    icon: Cloud,
+    short:
+      "Reliable cloud deployment, hosting configuration and production setup.",
+  },
+  {
+    title: "Domain & Business Email",
+    icon: Mail,
+    short:
+      "Professional domain setup and branded business email configuration.",
+  },
+  {
+    title: "Website Maintenance",
+    icon: Wrench,
+    short:
+      "Regular updates, security checks, bug fixes and performance improvements.",
+  },
+  {
+    title: "College Project Development",
+    icon: GraduationCap,
+    short:
+      "Web, app and software project development with practical implementation support.",
+  },
+  {
+    title: "Digital Product Launch",
     icon: Rocket,
-    short: "Launch strategy and product go-to-market support.",
+    short:
+      "Launch planning, digital setup and marketing support for new products.",
   },
 ];
 
@@ -247,14 +521,14 @@ export default function ServicesPage() {
             }}
             className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-slate-500 md:text-xl"
           >
-            Explore our services and discover smart digital solutions
-            designed to help your business grow.
+            Explore our 50+ digital services and discover smart solutions
+            designed to help your business grow, connect and succeed.
           </motion.p>
         </motion.div>
 
         {/* ================= SERVICES GRID ================= */}
 
-        <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -275,7 +549,7 @@ export default function ServicesPage() {
                 }}
                 transition={{
                   duration: 0.55,
-                  delay: index * 0.06,
+                  delay: (index % 4) * 0.06,
                 }}
                 whileHover={{
                   y: -8,
@@ -292,7 +566,7 @@ export default function ServicesPage() {
                 {/* Card */}
 
                 <div
-                  className="relative rounded-[28px] border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 group-hover:shadow-[0_18px_45px_rgba(29,78,216,0.12)]"
+                  className="relative h-full rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 group-hover:shadow-[0_18px_45px_rgba(29,78,216,0.12)]"
                 >
 
                   {/* Top Accent */}
@@ -302,13 +576,13 @@ export default function ServicesPage() {
                       width: 0,
                     }}
                     whileInView={{
-                      width: "45px",
+                      width: "42px",
                     }}
                     transition={{
-                      delay: 0.3 + index * 0.04,
+                      delay: 0.3 + (index % 4) * 0.04,
                       duration: 0.5,
                     }}
-                    className="mb-6 h-1 rounded-full bg-[#1D4ED8]"
+                    className="mb-5 h-1 rounded-full bg-[#1D4ED8]"
                   />
 
                   {/* Icon */}
@@ -322,29 +596,29 @@ export default function ServicesPage() {
                       type: "spring",
                       stiffness: 300,
                     }}
-                    className="flex h-16 w-16 items-center justify-center rounded-2xl border border-blue-100 bg-blue-50 text-[#1D4ED8] shadow-sm transition-colors duration-300 group-hover:bg-[#1D4ED8] group-hover:text-white"
+                    className="flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-100 bg-blue-50 text-[#1D4ED8] shadow-sm transition-colors duration-300 group-hover:bg-[#1D4ED8] group-hover:text-white"
                   >
                     <Icon
-                      size={29}
+                      size={26}
                       strokeWidth={2}
                     />
                   </motion.div>
 
                   {/* Title */}
 
-                  <h3 className="mt-7 text-2xl font-bold text-slate-900">
+                  <h3 className="mt-6 text-xl font-bold leading-tight text-slate-900">
                     {service.title}
                   </h3>
 
                   {/* Description */}
 
-                  <p className="mt-3 min-h-[52px] leading-relaxed text-slate-500">
+                  <p className="mt-3 min-h-[72px] text-sm leading-relaxed text-slate-500">
                     {service.short}
                   </p>
 
                   {/* Bottom Accent */}
 
-                  <div className="mt-7 flex items-center gap-2">
+                  <div className="mt-6 flex items-center gap-2">
                     <motion.div
                       initial={{
                         width: 25,
@@ -355,7 +629,7 @@ export default function ServicesPage() {
                       className="h-[3px] rounded-full bg-[#1D4ED8]"
                     />
 
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-blue-600">
                       Sylekt Us
                     </span>
                   </div>

@@ -10,14 +10,14 @@ import {
 
 const aboutData = [
   {
-    id: 1,
-    name: "Krish Sisodiya",
-    role: "Founder",
-    image: "/img/krish.png",
-    desc: "Our new website transformed the way we connect with clients and present our brand. The team delivered beyond expectations with incredible attention to detail.",
-    rating: 5,
-  },
-  {
+  id: 1,
+  name: "Krish Sisodiya",
+  role: "CEO",
+  image: "/img/krish.png",
+  desc: "Leading with innovation and vision, Krish Sisodiya is dedicated to building smart digital solutions that empower businesses, strengthen brands, and turn ideas into meaningful digital experiences.",
+  rating: 5,
+},
+  /*
     id: 2,
     name: "Kartik Prajapat",
     role: "Developer",
@@ -32,7 +32,7 @@ const aboutData = [
     image: "/img/pawan.png",
     desc: "They built our product exactly as we imagined, with exceptional attention to detail. Professional, responsive, and highly skilled team.",
     rating: 5,
-  },
+ */ 
 ];
 
 export default function AboutSection() {
@@ -150,7 +150,7 @@ export default function AboutSection() {
               ✦
             </motion.span>
 
-            Client Testimonials
+            About Team
           </motion.div>
 
           {/* Heading */}

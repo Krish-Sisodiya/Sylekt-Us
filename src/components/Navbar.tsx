@@ -272,7 +272,7 @@ useEffect(() => {
                     fontWeight: 700,
                   }}
                 >
-                  WE CODE YOUR SUCCESS
+                 SMART SOLUTION INFINITE POSSIBILITIES
                 </div>
               </motion.div>
             </motion.div>

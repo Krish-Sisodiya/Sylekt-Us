@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import {
   Code2,
   Smartphone,
-  Globe,
-  Database,
-  Cloud,
-  ShieldCheck,
   Palette,
-  Cpu,
   ArrowRight,
   Sparkles,
+  Package,
+  Video,
+  Megaphone,
+  ShoppingCart,
+  Share2,
 } from "lucide-react";
 import type { JSX } from "react";
 import { useNavigate } from "react-router-dom";
@@ -23,46 +23,46 @@ interface ServiceItem {
 const services: ServiceItem[] = [
   {
     title: "Web Development",
-    desc: "Scalable modern business websites built with cutting-edge technologies.",
+    desc: "Modern, responsive and scalable websites built for your business growth.",
     icon: <Code2 size={26} />,
   },
   {
     title: "App Development",
-    desc: "Native Android and iOS apps designed for performance and growth.",
+    desc: "High-performance Android and iOS apps designed for a seamless experience.",
     icon: <Smartphone size={26} />,
   },
   {
-    title: "Domain & Hosting",
-    desc: "Secure, fast hosting solutions with 99.9% uptime guarantee.",
-    icon: <Globe size={26} />,
+    title: "Social Media Handler",
+    desc: "Complete social media management to grow your brand and online presence.",
+    icon: <Share2 size={26} />,
   },
   {
-    title: "Custom Software",
-    desc: "Enterprise-grade software systems tailored to your business needs.",
-    icon: <Database size={26} />,
+    title: "E-Commerce",
+    desc: "Professional online stores with secure, user-friendly shopping experiences.",
+    icon: <ShoppingCart size={26} />,
   },
   {
-    title: "Cloud Solutions",
-    desc: "Scalable cloud infrastructure and DevOps automation services.",
-    icon: <Cloud size={26} />,
+    title: "Digital Marketing",
+    desc: "Result-driven digital marketing strategies to reach and convert your audience.",
+    icon: <Megaphone size={26} />,
   },
   {
-    title: "Cyber Security",
-    desc: "Advanced security solutions to protect your digital assets.",
-    icon: <ShieldCheck size={26} />,
-  },
-  {
-    title: "UI / UX Design",
-    desc: "Premium, user-centric interfaces that delight and convert.",
+    title: "Graphics Design",
+    desc: "Creative and professional graphics that make your brand visually stand out.",
     icon: <Palette size={26} />,
   },
   {
-    title: "AI Integrations",
-    desc: "Smart automation and AI-powered workflow solutions.",
-    icon: <Cpu size={26} />,
+    title: "Video Editing",
+    desc: "Engaging and high-quality video editing for social media, brands and businesses.",
+    icon: <Video size={26} />,
   },
-];
+  {
+    title: "Product Listing",
+    desc: "Optimized product listings with attractive content, images and detailed descriptions.",
+    icon: <Package size={26} />,
+  },
 
+];
 export default function Services(): JSX.Element {
   const navigate = useNavigate();
 

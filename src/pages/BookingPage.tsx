@@ -13,7 +13,7 @@ Sparkles
 } from "lucide-react";
 
 import { FaLinkedinIn } from "react-icons/fa";
-import logo from "/img/sylektusicon.png"; // path adjust kar lena
+import logo from "../../public/img/sy-logo-bg.png"; // path adjust kar lena
 
 export default function BookingPage(){
 
