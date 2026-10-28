@@ -8,7 +8,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
 function App() {
-  const whatsappNumber = "917389812435";
+  const whatsappNumber = "+91 96859 58831";
 
   const whatsappMessage = encodeURIComponent(
     "Hello Sylekt Us, I am interested in your digital services. I would like to discuss my project with you."
